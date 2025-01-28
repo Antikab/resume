@@ -109,7 +109,7 @@ export default {
 %text-l {
   font-family: var(--second-family);
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   line-height: 1.33;
   letter-spacing: 0.01em;
 }
@@ -291,8 +291,8 @@ export default {
     @extend %icon-square;
 
     @media (min-width: 1440px) {
-      width: 4rem !important;
-      height: 4rem !important;
+      width: 4rem;
+      height: 4rem;
     }
   }
 
@@ -301,8 +301,8 @@ export default {
     @extend %icon-square;
 
     @media (min-width: 1440px) {
-      width: 4rem !important;
-      height: 4rem !important;
+      width: 4rem;
+      height: 4rem;
     }
   }
 

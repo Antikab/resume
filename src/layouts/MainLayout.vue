@@ -84,7 +84,7 @@ export default {
 
   &__main {
     flex: 1;
-    padding: 4rem 3rem;
+    padding: 4rem 3rem 0;
     background-color: #ffffff;
 
     @media (max-width: 768px) {

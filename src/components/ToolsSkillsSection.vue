@@ -141,7 +141,7 @@ export default {
   &__title {
     font-family: var(--second-family);
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     line-height: 1.33;
     letter-spacing: 0.01em;
     color: vars.$color-title;
@@ -180,6 +180,10 @@ export default {
       flex: 1 1 calc(50% - 0.5rem);
     }
 
+    @media (min-width: 695px) and (max-width: 864px) {
+      flex: 1 1 calc(50% - 0.5rem);
+    }
+
     @media (min-width: 1130px) {
       &:nth-child(-n + 3) {
         flex: 1 1 calc(33% - 0.5rem);
@@ -201,11 +205,11 @@ export default {
     @extend %icon-base;
 
     @media (min-width: 768px) {
-      height: 3rem !important;
+      height: 3rem;
     }
 
     @media (min-width: 1440px) {
-      height: 4rem !important;
+      height: 4rem;
     }
   }
 
@@ -214,7 +218,7 @@ export default {
     @extend %icon-base;
 
     @media (min-width: 1440px) {
-      height: 4rem !important;
+      height: 4rem;
     }
   }
 

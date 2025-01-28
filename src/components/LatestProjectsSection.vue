@@ -176,7 +176,7 @@ export default {
   &__title {
     font-family: var(--second-family);
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     line-height: 1.33;
     letter-spacing: 0.01em;
     color: vars.$color-title;
@@ -210,8 +210,12 @@ export default {
     @media (max-width: 468px) {
       flex: 1 1 100%;
     }
-    @media (min-width: 469px) {
+    @media (min-width: 695px) and (max-width: 864px) {
       flex: 1 1 calc(50% - 0.75rem);
+    }
+
+    @media (min-width: 865px) and (max-width: 965px) {
+      flex: 1 1 100%;
     }
   }
 
@@ -233,13 +237,13 @@ export default {
     @extend %icon-base;
 
     @media (min-width: 768px) {
-      width: 3rem !important;
-      height: 3rem !important;
+      width: 3rem;
+      height: 3rem;
     }
 
     @media (min-width: 1440px) {
-      width: 4rem !important;
-      height: 4rem !important;
+      width: 4rem;
+      height: 4rem;
     }
   }
 
@@ -248,8 +252,8 @@ export default {
     @extend %icon-base;
 
     @media (min-width: 1440px) {
-      width: 4rem !important;
-      height: 4rem !important;
+      width: 4rem;
+      height: 4rem;
     }
   }
 

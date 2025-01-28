@@ -157,7 +157,7 @@ export default {
   &__title {
     font-family: var(--second-family);
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     line-height: 1.33;
     letter-spacing: 0.01em;
     color: vars.$color-title;
@@ -172,7 +172,7 @@ export default {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 0.5rem;
-    margin: 2rem 1.875rem 3rem 1.5rem;
+    margin: 2rem 1.875rem 4rem 1.5rem;
 
     border-radius: 8px;
     overflow: hidden;
@@ -196,7 +196,7 @@ export default {
       padding: 0.75rem 1rem 1.25rem;
     }
 
-    @media (min-width: 540px) {
+    @media (min-width: 695px) {
       flex-direction: row-reverse;
     }
     @media (min-width: 768px) and (max-width: 1129px) {
@@ -213,6 +213,7 @@ export default {
     flex: 0 0 auto;
 
     @media (max-width: 1129px) {
+      align-self: auto;
       font-size: 0.625rem;
     }
 
@@ -240,8 +241,8 @@ export default {
     @extend %icon-base;
 
     @media (min-width: 1440px) {
-      width: 4rem !important;
-      height: 4rem !important;
+      width: 4rem;
+      height: 4rem;
     }
   }
 
@@ -250,8 +251,8 @@ export default {
     @extend %icon-base;
 
     @media (min-width: 1440px) {
-      width: 4rem !important;
-      height: 4rem !important;
+      width: 4rem;
+      height: 4rem;
     }
   }
 
