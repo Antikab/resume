@@ -21,7 +21,13 @@ export default {
 
 <template>
   <section class="latest-projects">
-    <!-- <div class="step-icon-wrapper"></div> -->
+    <div class="latest-projects__step-wrapper">
+      <div class="latest-projects__step-point-wrapper">
+        <span class="latest-projects__step-point"></span>
+      </div>
+      <div class="latest-projects__step-divider"></div>
+    </div>
+
     <div class="latest-projects__wrapper">
       <h2 class="latest-projects__title">{{ mainTitle.titleLatestProjects }}</h2>
       <div class="latest-projects__card-wrapper">
@@ -106,6 +112,61 @@ export default {
 // -------------------------------------- //
 
 .latest-projects {
+  display: flex;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
+
+  &__step-wrapper {
+    width: 2rem;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    position: relative;
+  }
+
+  &__step-point-wrapper {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow:
+      inset 0 2px 2px 0 rgba(0, 0, 0, 0.04),
+      0 12px 48px 0 rgba(0, 0, 0, 0.04),
+      0 2px 8px 0 rgba(0, 0, 0, 0.05);
+    z-index: 2;
+
+    @media (max-width: 768px) {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+  }
+
+  &__step-point {
+    width: 0.5625rem;
+    height: 0.5625rem;
+    flex: 0 0 auto;
+    background-color: vars.$color-point;
+    border-radius: 50%;
+  }
+
+  &__step-divider {
+    position: absolute;
+    display: flex;
+    flex: 0 0 auto;
+    width: 1px;
+    height: 100%;
+    background-color: vars.$color-icon-bg;
+    z-index: 1;
+  }
+
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -119,6 +180,10 @@ export default {
     line-height: 1.33;
     letter-spacing: 0.01em;
     color: vars.$color-title;
+
+    @media (max-width: 768px) {
+      font-size: 1.25rem;
+    }
   }
 
   &__card-wrapper {

@@ -16,7 +16,13 @@ export default {
 
 <template>
   <section class="certificates">
-    <!-- <div class="step-icon-wrapper"></div> -->
+    <div class="certificates__step-wrapper">
+      <div class="certificates__step-point-wrapper">
+        <span class="certificates__step-point"></span>
+      </div>
+      <div class="certificates__step-divider"></div>
+    </div>
+
     <div class="certificates__wrapper">
       <h2 class="certificates__title">{{ mainTitle.titleCertificates }}</h2>
       <div class="certificates__card-wrapper">
@@ -88,6 +94,61 @@ export default {
 // -------------------------------------- //
 
 .certificates {
+  display: flex;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
+
+  &__step-wrapper {
+    width: 2rem;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    position: relative;
+  }
+
+  &__step-point-wrapper {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow:
+      inset 0 2px 2px 0 rgba(0, 0, 0, 0.04),
+      0 12px 48px 0 rgba(0, 0, 0, 0.04),
+      0 2px 8px 0 rgba(0, 0, 0, 0.05);
+    z-index: 2;
+
+    @media (max-width: 768px) {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+  }
+
+  &__step-point {
+    width: 0.5625rem;
+    height: 0.5625rem;
+    flex: 0 0 auto;
+    background-color: vars.$color-point;
+    border-radius: 50%;
+  }
+
+  &__step-divider {
+    position: absolute;
+    display: flex;
+    flex: 0 0 auto;
+    width: 1px;
+    height: 100%;
+    background-color: vars.$color-icon-bg;
+    z-index: 1;
+  }
+
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -100,6 +161,10 @@ export default {
     line-height: 1.33;
     letter-spacing: 0.01em;
     color: vars.$color-title;
+
+    @media (max-width: 768px) {
+      font-size: 1.25rem;
+    }
   }
 
   &__card-wrapper {
@@ -126,6 +191,10 @@ export default {
     gap: 0.5rem;
     background: vars.$color-card-bg;
     box-shadow: inset 0px -10px 20px 0px rgba(0, 0, 0, 0.03);
+
+    @media (max-width: 550px) {
+      padding: 0.75rem 1rem 1.25rem;
+    }
 
     @media (min-width: 540px) {
       flex-direction: row-reverse;
@@ -196,7 +265,11 @@ export default {
     @extend %text-label;
     color: vars.$color-label;
 
-    @media (max-width: 1129px) {
+    @media (max-width: 550px) {
+      font-size: 0.65rem;
+    }
+
+    @media (min-width: 551px) and (max-width: 1129px) {
       font-size: 0.75rem;
     }
 
@@ -217,7 +290,11 @@ export default {
       text-decoration-skip-ink: auto;
     }
 
-    @media (max-width: 1129px) {
+    @media (max-width: 550px) {
+      font-size: 0.75rem;
+    }
+
+    @media (min-width: 551px) and (max-width: 1129px) {
       font-size: 0.875rem;
     }
 

@@ -87,7 +87,7 @@ export default {
     padding: 4rem 3rem;
     background-color: #ffffff;
 
-    @media (min-width: 768px) {
+    @media (max-width: 768px) {
       padding: 4rem 3rem 4rem 2rem;
     }
   }

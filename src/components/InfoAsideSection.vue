@@ -50,7 +50,6 @@ export default {
       <h1 class="info-aside__profile-name">{{ profile.name }}</h1>
       <p class="info-aside__profile-about">{{ profile.about }}</p>
     </div>
-
     <div class="info-aside__divider"></div>
 
     <h3 class="info-aside__contacts-label">{{ asideTitle.titleContacts }}</h3>
@@ -263,10 +262,10 @@ export default {
   }
 
   &__divider {
-    margin-bottom: 2rem;
-    height: 1px;
-    background-color: vars.$color-icon-bg;
     width: 100%;
+    height: 1px;
+    margin-bottom: 2rem;
+    background-color: vars.$color-icon-bg;
   }
 
   &__contacts {
