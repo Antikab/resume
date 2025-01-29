@@ -11,9 +11,11 @@ export default {
       required: true
     }
   },
-  methods: {
-    formatLink(url) {
-      return url.replace(/^https?:\/\//, '')
+  computed: {
+    formatLink() {
+      return (url) => {
+        return url.replace(/^https?:\/\//, '')
+      }
     }
   }
 }

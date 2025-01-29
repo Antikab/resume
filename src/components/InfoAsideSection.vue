@@ -1,18 +1,5 @@
 <script>
 export default {
-  methods: {
-    getHref(item) {
-      let value = item.value
-
-      if (item.type === 'phone') {
-        value = value.replace(/[^\d+]/g, '')
-      }
-      return item.hrefPrefix ? item.hrefPrefix + value : value
-    },
-    formatLink(url) {
-      return url.replace(/^https?:\/\//, '')
-    }
-  },
   name: 'InfoAsideSection',
   props: {
     profile: {
@@ -38,6 +25,23 @@ export default {
     hobbiesInterests: {
       type: Array,
       required: true
+    }
+  },
+  computed: {
+    getHref() {
+      return (item) => {
+        let value = item.value
+
+        if (item.type === 'phone') {
+          value = value.replace(/[^\d+]/g, '')
+        }
+        return item.hrefPrefix ? item.hrefPrefix + value : value
+      }
+    },
+    formatLink() {
+      return (url) => {
+        return url.replace(/^https?:\/\//, '')
+      }
     }
   }
 }
