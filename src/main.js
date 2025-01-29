@@ -3,5 +3,9 @@ import '@/assets/styles/fonts.css'
 
 import { createApp } from 'vue'
 import App from '@/App.vue'
+import InlineSvg from 'vue-inline-svg'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+app.component('inline-svg', InlineSvg)
+app.mount('#app')

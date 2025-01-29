@@ -30,10 +30,11 @@ export default {
         <div v-for="(toolSkill, index) in toolsSkills" class="tools-skills__card" :key="index">
           <div class="tools-skills__logo-wrapper">
             <div class="tools-skills__logo-icon-wrapper">
-              <img
+              <inline-svg
                 class="tools-skills__logo-icon"
                 :src="toolSkill.icon"
-                :alt="`Иконка ${toolSkill.value}`"
+                :aria-label="`Иконка ${toolSkill.value}`"
+                role="img"
               />
             </div>
             <div class="tools-skills__text-wrapper">
@@ -61,6 +62,7 @@ export default {
 
 %icon-base {
   height: 3rem;
+  width: 3rem;
 }
 
 %text {
@@ -204,12 +206,9 @@ export default {
     @extend %icon-wrapper;
     @extend %icon-base;
 
-    @media (min-width: 768px) {
-      height: 3rem;
-    }
-
     @media (min-width: 1440px) {
       height: 4rem;
+      width: 4rem;
     }
   }
 
@@ -219,6 +218,7 @@ export default {
 
     @media (min-width: 1440px) {
       height: 4rem;
+      width: 4rem;
     }
   }
 

@@ -32,7 +32,12 @@ export default {
           </div>
           <div class="certificates__logo-wrapper">
             <div class="certificates__logo-icon-wrapper">
-              <img class="certificates__logo-icon" :src="item.icon" :alt="`Иконка ${item.value}`" />
+              <inline-svg
+                class="certificates__logo-icon"
+                :src="item.icon"
+                :aria-label="`Иконка ${item.value}`"
+                role="img"
+              />
             </div>
             <div class="certificates__text-wrapper">
               <p class="certificates__label">{{ item.label }}</p>
@@ -43,7 +48,11 @@ export default {
                 class="certificates__link"
               >
                 <div class="certificates__link-icon-wrapper">
-                  <component :is="item.iconLink" class="certificates__link-icon" />
+                  <inline-svg
+                    class="certificates__link-icon"
+                    :src="item.iconLink"
+                    role="presentation"
+                  />
                 </div>
                 {{ item.value }}
               </a>

@@ -37,16 +37,21 @@ export default {
               </span>
               <span v-else class="achievements__date-text">{{ achievement.date }}</span>
               <span class="achievements__icon-location-wrapper">
-                <component :is="achievement.iconLocation" class="achievements__icon-location" />
+                <inline-svg
+                  class="achievements__icon-location"
+                  :src="achievement.iconLocation"
+                  role="presentation"
+                />
               </span>
               <span class="achievements__place-text">{{ achievement.location }}</span>
             </div>
             <div class="achievements__company-wrapper">
               <div class="achievements__company-icon-wrapper">
-                <img
+                <inline-svg
                   class="achievements__company-icon"
                   :src="achievement.iconCompany"
-                  :alt="`Иконка ${achievement.company}`"
+                  :aria-label="`Иконка ${achievement.company}`"
+                  role="img"
                 />
               </div>
               <div class="achievements__position-text">

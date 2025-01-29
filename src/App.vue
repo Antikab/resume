@@ -1,21 +1,10 @@
 <script>
-import { markRaw } from 'vue'
-
 import MainLayout from '@/layouts/MainLayout.vue'
 import EducationSection from '@/components/EducationSection.vue'
 import AchievementsSection from '@/components/AchievementsSection.vue'
 import ToolsSkillsSection from '@/components/ToolsSkillsSection.vue'
 import LatestProjectsSection from '@/components/LatestProjectsSection.vue'
 import CertificatesSection from '@/components/CertificatesSection.vue'
-
-import IconRun from '@/components/icons/IconRun.vue'
-import IconMail from '@/components/icons/IconMail.vue'
-import IconLink from '@/components/icons/IconLink.vue'
-import IconPhone from '@/components/icons/IconPhone.vue'
-import IconBlogger from '@/components/icons/IconBlogger.vue'
-import IconAddress from '@/components/icons/IconAddress.vue'
-import IconFitness from '@/components/icons/IconFitness.vue'
-import IconProgramming from '@/components/icons/IconProgramming.vue'
 
 export default {
   name: 'App',
@@ -30,6 +19,7 @@ export default {
   data() {
     return {
       profile: {
+        photo: '/src/assets/images/myPhoto.png',
         name: 'Арсений Просветов',
         about: `Фронтенд-разработчик, создаю современные и удобные интерфейсы с
           использованием Vue.js, React и других передовых технологий. Уделяю внимание
@@ -55,24 +45,24 @@ export default {
           label: 'Почта',
           value: 'arsprosvet@mail.ru',
           hrefPrefix: 'mailto:',
-          icon: markRaw(IconMail)
+          icon: '/icons/IconMail.svg'
         },
         {
           label: 'Визитка',
           value: 'https://antikab.github.io/bat-it/',
-          icon: markRaw(IconLink)
+          icon: '/icons/IconLink.svg'
         },
         {
           label: 'Телефон',
           value: '+7 (901) 421-8074',
           hrefPrefix: 'tel:',
-          icon: markRaw(IconPhone)
+          icon: '/icons/IconPhone.svg'
         },
         {
           label: 'Адрес',
           value: 'Россия, Москва',
           hrefPrefix: 'https://www.google.com/maps?q=',
-          icon: markRaw(IconAddress)
+          icon: '/icons/IconAddress.svg'
         }
       ],
       socials: [
@@ -104,22 +94,22 @@ export default {
       hobbiesInterests: [
         {
           label: 'Программирование',
-          icon: markRaw(IconProgramming),
+          icon: '/icons/IconProgramming.svg',
           color: '#7a327c'
         },
         {
           label: 'Фитнес',
-          icon: markRaw(IconFitness),
+          icon: '/icons/IconFitness.svg',
           color: '#0d839b'
         },
         {
           label: 'Бег',
-          icon: markRaw(IconRun),
+          icon: '/icons/IconRun.svg',
           color: '#0d9b33'
         },
         {
           label: 'Видеоблогинг',
-          icon: markRaw(IconBlogger),
+          icon: '/icons/IconBlogger.svg',
           color: '#d51e1e'
         }
       ],
@@ -131,7 +121,7 @@ export default {
           labelPercentage: 'Средний балл',
           percentage: '100%',
           icon: '/icons/IconNetology.svg',
-          iconLink: markRaw(IconLink),
+          iconLink: '/icons/IconLink.svg',
           link: 'https://drive.google.com/file/d/1qWGC6mQrQznKi7Myh14iS_VaLlWRifsZ/view?usp=drive_link'
         },
         {
@@ -141,7 +131,7 @@ export default {
           labelPercentage: 'Средний балл',
           percentage: '98.4%',
           icon: '/icons/IconVgtu.svg',
-          iconLink: markRaw(IconLink),
+          iconLink: '/icons/IconLink.svg',
           link: 'https://drive.google.com/file/d/1YLZdFWwWXwgZ9lNWR3TlPy6lRZ_7kIve/view?usp=drive_link'
         },
         {
@@ -151,7 +141,7 @@ export default {
           labelPercentage: 'Средний балл',
           percentage: '90.2%',
           icon: '/icons/IconVgasu.svg',
-          iconLink: markRaw(IconLink),
+          iconLink: '/icons/IconLink.svg',
           link: 'https://drive.google.com/file/d/1fL5MJBwKGiqZwjkX8T1-UDDCT6lSTABC/view?usp=drive_link'
         }
       ],
@@ -159,9 +149,9 @@ export default {
         {
           date: 'Ноябрь 2023',
           datePresent: 'Настоящее время',
-          iconLocation: markRaw(IconAddress),
+          iconLocation: '/icons/IconAddress.svg',
           location: 'Москва',
-          iconCompany: '/glavapu.png',
+          iconCompany: '/icons/IconGlavapu.svg',
           jobTitle: 'Фулстек-разработчик',
           company: 'ГлавАПУ',
           descriptions: [
@@ -213,7 +203,7 @@ export default {
         },
         {
           date: 'Май 2024 - Ноябрь 2024',
-          iconLocation: markRaw(IconAddress),
+          iconLocation: '/icons/IconAddress.svg',
           location: 'Лондон',
           iconCompany: '/icons/IconArchTown.svg',
           jobTitle: 'Фронтенд-разработчик',
@@ -235,7 +225,7 @@ export default {
         },
         {
           date: 'Июнь 2022 - Июнь 2023',
-          iconLocation: markRaw(IconAddress),
+          iconLocation: '/icons/IconAddress.svg',
           location: 'Москва',
           iconCompany: '/icons/IconNetology.svg',
           jobTitle: 'Фронтенд-разработчик',
@@ -352,8 +342,8 @@ export default {
           jobTitle: 'GeoServer Styles Manager',
           label: `Проект для работы со стилями: загрузка, поиск, фильтрация, пагинация, создание новых, отображение прогресса загрузки и логов.
             Стек: Next.js, React, Prisma, Supabase, TailwindCSS.`,
-          icon: '/geoStyles.png',
-          iconLink: markRaw(IconLink),
+          icon: '/icons/IconGeostyles.svg',
+          iconLink: '/icons/IconLink.svg',
           link: 'https://geostyles.vercel.app/'
         },
         {
@@ -361,7 +351,7 @@ export default {
           label: `Сайт digital-маркетингового агентства полного цикла.
             Стек: HTML, БЭМ методология, Sass на диалекте SCSS, немного JS.`,
           icon: '/icons/IconPositivus.svg',
-          iconLink: markRaw(IconLink),
+          iconLink: '/icons/IconLink.svg',
           link: 'https://t-vuser.vercel.app/'
         }
       ],
@@ -371,7 +361,7 @@ export default {
           value: 'Адаптивная и мобильная верстка',
           date: 'Февраль 2022 – Апрель 2022',
           icon: '/icons/IconCss.svg',
-          iconLink: markRaw(IconLink),
+          iconLink: '/icons/IconLink.svg',
           link: 'https://drive.google.com/file/d/1gbPdonmxTNuBCPWpAQrQXjpKI5sxvpGK/view?usp=drive_link'
         },
         {
@@ -379,7 +369,7 @@ export default {
           value: 'Git — система контроля версий',
           date: 'Июнь 2022 – Июнь 2022',
           icon: '/icons/IconGitHub.svg',
-          iconLink: markRaw(IconLink),
+          iconLink: '/icons/IconLink.svg',
           link: 'https://drive.google.com/file/d/13t4KXoPJiLnzY2tf0b6-xXc99P-f1iuC/view?usp=drive_link'
         },
         {
@@ -387,7 +377,7 @@ export default {
           value: 'Продвинутый JavaScript',
           date: 'Октябрь 2022 – Март 2023',
           icon: '/icons/IconJs.svg',
-          iconLink: markRaw(IconLink),
+          iconLink: '/icons/IconLink.svg',
           link: 'https://drive.google.com/file/d/1q4Gkwi972xIgVzdCwdaUBPCGCuriCeLP/view?usp=drive_link'
         },
         {
@@ -395,7 +385,7 @@ export default {
           value: 'Библиотека React',
           date: 'Апрель 2023 – Июнь 2023',
           icon: '/icons/IconReact.svg',
-          iconLink: markRaw(IconLink),
+          iconLink: '/icons/IconLink.svg',
           link: 'https://drive.google.com/file/d/1w0Ra0vjff6HFNUe0LP0nsK_LNbQUCqsL/view?usp=drive_link'
         }
       ]
@@ -420,5 +410,3 @@ export default {
     <CertificatesSection :mainTitle="mainTitle" :certificates="certificates" />
   </MainLayout>
 </template>
-
-<style lang="scss" scoped></style>

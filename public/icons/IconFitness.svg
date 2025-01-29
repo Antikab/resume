@@ -1,10 +1,9 @@
-<template>
-  <svg
-    role="presentation"
-    fill="currentColor"
-    viewBox="0 0 512 512"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+<svg
+  
+  fill="currentColor"
+  viewBox="0 0 512 512"
+  xmlns="http://www.w3.org/2000/svg"
+>
     <g id="SVGRepo_bgCarrier" stroke-width="0" />
 
     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
@@ -23,4 +22,3 @@
       <path d="M48,240a16,16,0,0,0,0,32H69.35a225.22,225.22,0,0,1-12.42-32Z" />
     </g>
   </svg>
-</template>

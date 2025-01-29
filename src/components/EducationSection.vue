@@ -29,10 +29,11 @@ export default {
         <div v-for="(item, index) in education" class="education__card" :key="index">
           <div class="education__logo-wrapper">
             <div class="education__logo-icon-wrapper">
-              <img
+              <inline-svg
                 class="education__logo-icon"
                 :src="item.icon"
-                :alt="`Иконка ${item.institution}`"
+                :aria-label="`Иконка ${item.institution}`"
+                role="img"
               />
             </div>
             <h3 class="education__institution">{{ item.institution }}</h3>
@@ -41,7 +42,7 @@ export default {
           <div class="education__details">
             <a :href="item.link" target="_blank" rel="noopener noreferrer" class="education__link">
               <div class="education__link-icon-wrapper">
-                <component :is="item.iconLink" class="education__link-icon" />
+                <inline-svg class="education__link-icon" :src="item.iconLink" role="presentation" />
               </div>
               <p class="education__degree">{{ item.degree }}</p>
             </a>

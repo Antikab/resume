@@ -1,11 +1,10 @@
-<template>
-  <svg
-    role="presentation"
-    version="1.0"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 450 437"
-    preserveAspectRatio="xMidYMid meet"
-  >
+<svg
+  
+  version="1.0"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 450 437"
+  preserveAspectRatio="xMidYMid meet"
+>
     <g transform="translate(0,437) scale(0.1,-0.1)" fill="currentColor" stroke="none">
       <path
         d="M2035 4363 c-433 -37 -798 -171 -1145 -421 -132 -96 -354 -315 -451
@@ -65,4 +64,3 @@ l90 0 4 54 c5 66 56 174 98 209 l29 25 -37 6 c-37 6 -193 6 -267 -1z"
       />
     </g>
   </svg>
-</template>

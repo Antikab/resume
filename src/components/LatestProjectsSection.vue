@@ -38,10 +38,11 @@ export default {
         >
           <div class="latest-projects__logo-wrapper">
             <div class="latest-projects__logo-icon-wrapper">
-              <img
+              <inline-svg
                 class="latest-projects__logo-icon"
                 :src="latestProject.icon"
-                :alt="`Иконка ${latestProject.jobTitle}`"
+                :aria-label="`Иконка ${latestProject.jobTitle}`"
+                role="img"
               />
             </div>
             <div class="latest-projects__text-wrapper">
@@ -56,7 +57,7 @@ export default {
             class="latest-projects__link"
           >
             <div class="latest-projects__link-icon-wrapper">
-              <component :is="latestProject.iconLink" class="latest-projects__link-icon" />
+              <inline-svg class="latest-projects__link-icon" :src="latestProject.iconLink" />
             </div>
             {{ formatLink(latestProject.link) }}
           </a>

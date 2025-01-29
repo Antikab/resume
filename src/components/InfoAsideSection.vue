@@ -36,7 +36,7 @@ export default {
       required: true
     },
     hobbiesInterests: {
-      type: Object,
+      type: Array,
       required: true
     }
   }
@@ -46,7 +46,7 @@ export default {
 <template>
   <aside class="info-aside">
     <div class="info-aside__profile">
-      <img class="info-aside__profile-avatar" src="@/assets/image/myPhoto.png" alt="My photo" />
+      <img class="info-aside__profile-avatar" :src="profile.photo" :alt="`Фото ${profile.name}`" />
       <h1 class="info-aside__profile-name">{{ profile.name }}</h1>
       <p class="info-aside__profile-about">{{ profile.about }}</p>
     </div>
@@ -56,7 +56,12 @@ export default {
     <div class="info-aside__contacts">
       <div v-for="(contact, index) in contacts" :key="index" class="info-aside__contacts-item">
         <div class="info-aside__contacts-icon-wrapper">
-          <component :is="contact.icon" class="info-aside__contacts-icon" />
+          <inline-svg
+            class="info-aside__contacts-icon"
+            :src="contact.icon"
+            :aria-label="`Иконка ${contact.label}`"
+            role="img"
+          />
         </div>
         <div class="info-aside__contacts-details">
           <span class="info-aside__contacts-label">{{ contact.label }}</span>
@@ -79,10 +84,11 @@ export default {
     <div class="info-aside__socials">
       <div v-for="(social, index) in socials" :key="index" class="info-aside__socials-item">
         <div class="info-aside__socials-icon-wrapper">
-          <img
+          <inline-svg
             class="info-aside__socials-icon"
             :src="social.icon"
-            :alt="`Иконка ${social.label}`"
+            :aria-label="`Иконка ${social.label}`"
+            role="img"
           />
         </div>
         <div class="info-aside__socials-details">
@@ -110,7 +116,12 @@ export default {
         :aria-label="`Владение языком: ${lang.value}, уровень ${lang.label}`"
       >
         <div class="info-aside__languages-icon-wrapper">
-          <img class="info-aside__languages-icon" :src="lang.icon" :alt="`Иконка ${lang.value}`" />
+          <inline-svg
+            class="info-aside__languages-icon"
+            :src="lang.icon"
+            :aria-label="`Иконка ${lang.value}`"
+            role="img"
+          />
         </div>
         <div class="info-aside__languages-details">
           <span class="info-aside__languages-text">{{ lang.value }}</span>
@@ -131,7 +142,12 @@ export default {
         :aria-label="`Увлечение: ${hobby.label}`"
       >
         <div class="info-aside__hobbiesInterests-icon-wrapper">
-          <component :is="hobby.icon" class="info-aside__hobbiesInterests-icon" />
+          <inline-svg
+            class="info-aside__hobbiesInterests-icon"
+            :src="hobby.icon"
+            :aria-label="`Иконка ${hobby.label}`"
+            role="img"
+          />
         </div>
         <div class="info-aside__hobbiesInterests-details">
           <span class="info-aside__hobbiesInterests-text">
@@ -242,7 +258,7 @@ export default {
   &__profile-about {
     margin-bottom: 0.625rem;
     margin-right: -0.507rem;
-    text-align: start;
+    text-align: justify;
     font-family: var(--second-family);
     font-weight: 500;
     font-size: 1rem;
