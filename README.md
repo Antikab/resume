@@ -64,23 +64,37 @@ yarn format
 
 ```plaintext
 RESUME/
-├── public/                 # Публичные файлы (иконки, изображения)
-│   ├── icons/
-│   │   ├── geoStyles.png
-│   │   ├── glavapu.png
-│   │   ├── Prosvetov.png
-├── src/                    # Исходный код приложения
-│   ├── assets/             # Статические ресурсы (стили, шрифты, изображения)
-│   │   ├── styles/         # SCSS и CSS файлы
-│   ├── components/         # Компоненты Vue
-│   ├── layouts/            # Основные макеты
-│   ├── App.vue             # Главный компонент приложения
+├── public/
+│   ├── icons/              # SVG-иконки
+│   ├── images/             # PNG/JPG изображения
+│
+├── src/
+│   ├── assets/
+│   │   ├── fonts/          # Локальные шрифты
+│   │   ├── images/         # Изображения, используемые в компонентах
+│   │   ├── styles/         # Глобальные SCSS/CSS файлы
+│   │
+│   ├── components/         # UI-компоненты
+│   │
+│   ├── layouts/            # Макеты страниц (Layouts)
+│   │
+│   ├── data/               # Отдельные константы
+│   │
+│   ├── App.vue             # Главный Vue-компонент
 │   ├── main.js             # Точка входа в приложение
-├── index.html              # Основной HTML-файл
-├── package.json            # Файл конфигурации зависимостей
+│   ├── index.html          # Главный HTML-файл
+│
+├── .gitignore              # Исключённые файлы (node_modules, dist, env и т. д.)
+├── package.json            # Список зависимостей
+├── yarn.lock               # Блокировка зависимостей (Yarn)
+│
 ├── vite.config.js          # Конфигурация Vite
+├── jsconfig.json           # Пути для автоимпорта в VS Code
+├── eslint.config.js        # Конфигурация ESLint
+├── .editorconfig           # Настройки кодстайла для редакторов
+├── .prettierrc.json        # Форматирование кода (Prettier)
+│
 ├── README.md               # Документация проекта
-
 ```
 
 ## Установка стилей
