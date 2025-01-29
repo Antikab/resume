@@ -1,10 +1,15 @@
+import IconAddress from '@/assets/icons/IconAddress.svg'
+import IconGlavapu from '@/assets/icons/IconGlavapu.svg'
+import IconArchTown from '@/assets/icons/IconArchTown.svg'
+import IconNetology from '@/assets/icons/IconNetology.svg'
+
 const achievements = [
   {
     date: 'Ноябрь 2023',
     datePresent: 'Настоящее время',
-    iconLocation: '/icons/IconAddress.svg',
+    iconLocation: IconAddress,
     location: 'Москва',
-    iconCompany: '/icons/IconGlavapu.svg',
+    iconCompany: IconGlavapu,
     jobTitle: 'Фулстек-разработчик',
     company: 'ГлавАПУ',
     descriptions: [
@@ -56,9 +61,9 @@ const achievements = [
   },
   {
     date: 'Май 2024 - Ноябрь 2024',
-    iconLocation: '/icons/IconAddress.svg',
+    iconLocation: IconAddress,
     location: 'Лондон',
-    iconCompany: '/icons/IconArchTown.svg',
+    iconCompany: IconArchTown,
     jobTitle: 'Фронтенд-разработчик',
     company: 'Arch Town Labs CIC',
     descriptions: [
@@ -78,9 +83,9 @@ const achievements = [
   },
   {
     date: 'Июнь 2022 - Июнь 2023',
-    iconLocation: '/icons/IconAddress.svg',
+    iconLocation: IconAddress,
     location: 'Москва',
-    iconCompany: '/icons/IconNetology.svg',
+    iconCompany: IconNetology,
     jobTitle: 'Фронтенд-разработчик',
     company: 'Нетология',
     descriptions: [

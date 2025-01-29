@@ -1,23 +1,28 @@
+import IconGitHub from '@/assets/icons/IconGitHub.svg'
+import IconYouTube from '@/assets/icons/IconYouTube.svg'
+import IconVk from '@/assets/icons/IconVk.svg'
+import IconTelegram from '@/assets/icons/IconTelegram.svg'
+
 const socials = [
   {
     label: 'GitHub',
     value: 'https://github.com/Antikab',
-    icon: '/icons/IconGitHub.svg'
+    icon: IconGitHub
   },
   {
     label: 'YouTube',
     value: 'https://www.youtube.com/@proArs13',
-    icon: '/icons/IconYouTube.svg'
+    icon: IconYouTube
   },
   {
     label: 'Вконтакте',
     value: 'https://vk.com/antikab13',
-    icon: '/icons/IconVk.svg'
+    icon: IconVk
   },
   {
     label: 'Телеграм',
     value: 'https://t.me/ProArS',
-    icon: '/icons/IconTelegram.svg'
+    icon: IconTelegram
   }
 ]
 

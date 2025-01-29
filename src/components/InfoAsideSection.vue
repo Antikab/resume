@@ -50,7 +50,11 @@ export default {
 <template>
   <aside class="info-aside">
     <div class="info-aside__profile">
-      <img class="info-aside__profile-avatar" :src="profile.photo" :alt="`Фото ${profile.name}`" />
+      <img
+        class="info-aside__profile-avatar"
+        src="/images/myPhoto.png"
+        :alt="`Фото ${profile.name}`"
+      />
       <h1 class="info-aside__profile-name">{{ profile.name }}</h1>
       <p class="info-aside__profile-about">{{ profile.about }}</p>
     </div>
@@ -65,6 +69,7 @@ export default {
             :src="contact.icon"
             :aria-label="`Иконка ${contact.label}`"
             role="img"
+            fill="currentColor"
           />
         </div>
         <div class="info-aside__contacts-details">
@@ -151,6 +156,7 @@ export default {
             :src="hobby.icon"
             :aria-label="`Иконка ${hobby.label}`"
             role="img"
+            fill="currentColor"
           />
         </div>
         <div class="info-aside__hobbiesInterests-details">

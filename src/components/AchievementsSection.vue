@@ -268,12 +268,22 @@ export default {
   &__icon-location-wrapper {
     @extend %icon-wrapper;
     @extend %icon-sm;
+
+    @media (min-width: 1440px) {
+      width: 0.9rem;
+      height: 0.9rem;
+    }
   }
 
   &__icon-location {
     @extend %icon-wrapper;
     @extend %icon-sm;
     color: vars.$color-label;
+
+    @media (min-width: 1440px) {
+      width: 0.9rem;
+      height: 0.9rem;
+    }
   }
 
   &__place-text {

@@ -1,6 +1,9 @@
+import IconRus from '@/assets/icons/IconRus.svg'
+import IconEng from '@/assets/icons/IconEng.svg'
+
 const languages = [
-  { label: 'Родной', value: 'Русский', icon: '/icons/IconRus.svg' },
-  { label: 'A1 - Начальный', value: 'Английский', icon: '/icons/IconEng.svg' }
+  { label: 'Родной', value: 'Русский', icon: IconRus },
+  { label: 'A1 - Начальный', value: 'Английский', icon: IconEng }
 ]
 
 export { languages }
