@@ -64,37 +64,38 @@ yarn format
 
 ```plaintext
 RESUME/
-├── public/
-│   ├── icons/              # SVG-иконки
+├── public/                 # Публичные файлы, доступные напрямую через браузер
 │   ├── images/             # PNG/JPG изображения
 │
-├── src/
-│   ├── assets/
+├── src/                    # Исходный код приложения
+│   ├── assets/             # Статические ресурсы, доступные через импорт
 │   │   ├── fonts/          # Локальные шрифты
-│   │   ├── images/         # Изображения, используемые в компонентах
+│   │   ├── icons/          # SVG-иконки, используемые через импорт
 │   │   ├── styles/         # Глобальные SCSS/CSS файлы
-│   │
-│   ├── components/         # UI-компоненты
-│   │
-│   ├── layouts/            # Макеты страниц (Layouts)
-│   │
-│   ├── data/               # Отдельные константы
-│   │
-│   ├── App.vue             # Главный Vue-компонент
+│
+│   ├── components/         # Vue-компоненты
+│
+│   ├── data/               # Константы и статические данные
+│
+│   ├── layouts/            # Основные макеты (Layouts)
+│   │   ├── MainLayout.vue  # Главный макет
+│
+│   ├── App.vue             # Корневой компонент Vue
 │   ├── main.js             # Точка входа в приложение
-│   ├── index.html          # Главный HTML-файл
+│   ├── index.html          # Основной HTML-файл
 │
-├── .gitignore              # Исключённые файлы (node_modules, dist, env и т. д.)
-├── package.json            # Список зависимостей
-├── yarn.lock               # Блокировка зависимостей (Yarn)
+├── .gitignore              # Файлы и папки, игнорируемые Git
+├── package.json            # Конфигурация npm/Yarn, список зависимостей
+├── yarn.lock               # Файл блокировки версий пакетов для Yarn
 │
-├── vite.config.js          # Конфигурация Vite
+├── vite.config.js          # Конфигурация сборщика Vite
 ├── jsconfig.json           # Пути для автоимпорта в VS Code
-├── eslint.config.js        # Конфигурация ESLint
+├── eslint.config.js        # Конфигурация линтера ESLint
 ├── .editorconfig           # Настройки кодстайла для редакторов
-├── .prettierrc.json        # Форматирование кода (Prettier)
+├── .prettierrc.json        # Конфигурация форматирования Prettier
 │
 ├── README.md               # Документация проекта
+
 ```
 
 ## Установка стилей
