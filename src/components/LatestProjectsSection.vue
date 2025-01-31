@@ -210,7 +210,7 @@ export default {
     background: vars.$color-card-bg;
     box-shadow: inset 0px -10px 20px 0px rgba(0, 0, 0, 0.03);
 
-    @media (max-width: 468px) {
+    @media (max-width: 568px) {
       flex: 1 1 100%;
     }
     @media (min-width: 695px) and (max-width: 864px) {
@@ -289,6 +289,7 @@ export default {
     @extend %text-m-second;
     display: flex;
     align-items: center;
+    align-self: flex-start;
     gap: 0.5rem;
     color: vars.$color-icon-link;
 

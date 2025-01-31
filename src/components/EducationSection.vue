@@ -252,6 +252,7 @@ export default {
   &__link {
     display: flex;
     align-items: center;
+    align-self: flex-start;
     gap: 0.5rem;
     @extend %text;
     color: vars.$color-title;
