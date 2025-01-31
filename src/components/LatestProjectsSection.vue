@@ -278,6 +278,7 @@ export default {
   &__label {
     @extend %text-second;
     color: vars.$color-label;
+    white-space: pre-line;
 
     @media (max-width: 1129px) {
       font-size: 0.75rem;

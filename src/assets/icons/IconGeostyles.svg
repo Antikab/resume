@@ -1,3 +1,10 @@
-<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M9.41772 62.7368L0 72L30.0759 91.7895L29.1646 95.1579L72.6076 120L80.8101 102.316L75.6456 91.7895L78.3797 80L97.8228 90.5263L101.165 77.8947L105.722 58.1053L113.924 62.3158L120 34.9474L105.722 28.6316L102.684 19.3684C101.266 19.0877 97.5797 17.6842 94.1772 14.3158C90.7747 10.9474 90.1266 8.70175 90.2278 8L71.6962 0L66.5316 17.2632L54.9873 22.3158L23.6962 2.52632L9.41772 62.7368Z" fill="#B800F5"/>
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="10,10 90,20 80,80 20,90" stroke="#007BFF" stroke-width="2" fill="none"/>
+    <defs>
+        <pattern id="diagonalHatch" patternUnits="userSpaceOnUse" width="6" height="6">
+            <path d="M-1,1 l2,-2 M0,6 l6,-6 M5,7 l2,-2" stroke="#007BFF" stroke-width="0.5"/>
+        </pattern>
+    </defs>
+    <polygon points="20,20 80,30 70,70 30,80" fill="url(#diagonalHatch)" stroke="#0056b3" stroke-width="2"/>
+    <line x1="15" y1="85" x2="85" y2="15" stroke="#28a745" stroke-width="2" stroke-dasharray="4"/>
 </svg>
