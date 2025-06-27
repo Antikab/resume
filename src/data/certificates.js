@@ -17,6 +17,14 @@ const certificates = [
   },
   {
     label: 'Госуслуги',
+    value: 'Git - Продвинутый уровень',
+    date: 'Июнь 2025 – Июнь 2026',
+    icon: IconGitHub,
+    iconLink: IconLink,
+    link: 'https://drive.google.com/file/d/1FkDfhedo9Qc4WpGrfE_IfOzIBomLKe7B/view?usp=drive_link'
+  },
+  {
+    label: 'Госуслуги',
     value: 'JavaScript - Продвинутый уровень',
     date: 'Июнь 2025 – Июнь 2026',
     icon: IconJs,
