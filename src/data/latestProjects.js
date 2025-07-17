@@ -31,11 +31,11 @@ const latestProjects = [
     label: `Минималистичное приложение для загрузки и управления файлами в Firebase Storage.
       Возможности: drag'n'drop и диалог выбора файлов, Список с именем, размером и датой загрузки, скачивание и удаление файлов, состояние хранится в Pinia.
 
-      Стек: Vue 3 + Vite, Pinia, Vue Router, Tailwind CSS, TypeScript, TailwindCSS.
+      Стек: Vue 3 + Vite, Pinia, Vue Router, JS, TailwindCSS.
       (Репозиторий: github.com/Antikab/storage - если не работает включите VPN)`,
     icon: IconStore,
     iconLink: IconLink,
-    link: 'https://storage-beige.vercel.app/'
+    link: 'https://storage-v2.vercel.app/'
   },
   {
     jobTitle: 'Travalizer',
