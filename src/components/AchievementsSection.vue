@@ -1,96 +1,13 @@
 <script>
-import { Collapse } from 'vue-collapsed'
-
-const MAX_BULLETS_COLLAPSED = 3
-const MAX_RESULTS_COLLAPSED = 2
-const MAX_LEAD_CHARS_COLLAPSED = 260
-
 export default {
   name: 'AchievementsSection',
-  components: { Collapse },
   props: {
-    mainTitle: {
-      type: Object,
-      required: true
-    },
-    achievements: {
-      type: Array,
-      required: true
-    }
-  },
-  data() {
-    return {
-      expandedMap: {}
-    }
+    mainTitle: Object,
+    achievements: Array
   },
   methods: {
-    makeKey(achievementIndex, descIndex) {
-      return `${achievementIndex}:${descIndex}`
-    },
-    isExpanded(key) {
-      return Boolean(this.expandedMap[key])
-    },
-    toggleExpanded(key) {
-      this.expandedMap[key] = !this.expandedMap[key]
-    },
-
-    // --- content helpers ---
-    getLeadSource(description) {
-      return (description.descriptionLead || description.descriptionJob || '').trim()
-    },
-
-    isCollapsible(description) {
-      const lead = this.getLeadSource(description)
-      const bulletsCount = description.bullets?.length ?? 0
-      const resultsCount = description.results?.length ?? 0
-      const hasOldResultText = Boolean(description.result)
-
-      return (
-        lead.length > MAX_LEAD_CHARS_COLLAPSED ||
-        bulletsCount > MAX_BULLETS_COLLAPSED ||
-        resultsCount > MAX_RESULTS_COLLAPSED ||
-        (hasOldResultText && String(description.result).length > 220)
-      )
-    },
-
-    getLeadText(description, expanded) {
-      const lead = this.getLeadSource(description)
-      if (!lead) return ''
-      if (expanded) return lead
-      if (lead.length <= MAX_LEAD_CHARS_COLLAPSED) return lead
-      return `${lead.slice(0, MAX_LEAD_CHARS_COLLAPSED).trimEnd()}…`
-    },
-
-    getBulletsPreview(description) {
-      const bullets = description.bullets ?? []
-      return bullets.slice(0, MAX_BULLETS_COLLAPSED)
-    },
-    getBulletsMore(description) {
-      const bullets = description.bullets ?? []
-      return bullets.slice(MAX_BULLETS_COLLAPSED)
-    },
-    hasMoreBullets(description) {
-      return (description.bullets?.length ?? 0) > MAX_BULLETS_COLLAPSED
-    },
-
-    getResultsPreview(description) {
-      const results = description.results ?? []
-      return results.slice(0, MAX_RESULTS_COLLAPSED)
-    },
-    getResultsMore(description) {
-      const results = description.results ?? []
-      return results.slice(MAX_RESULTS_COLLAPSED)
-    },
-    hasMoreResults(description) {
-      return (description.results?.length ?? 0) > MAX_RESULTS_COLLAPSED
-    },
-
-    getOldResultText(description, expanded) {
-      const text = (description.result || '').trim()
-      if (!text) return ''
-      if (expanded) return text
-      if (text.length <= 220) return text
-      return `${text.slice(0, 220).trimEnd()}…`
+    getLeadSource(d) {
+      return (d.descriptionLead || d.descriptionJob || '').trim()
     }
   }
 }
@@ -163,110 +80,47 @@ export default {
                 {{ description.descriptionTitle }}
               </h3>
 
-              <!-- Лид -->
               <p v-if="getLeadSource(description)" class="achievements__lead">
-                {{ getLeadText(description, isExpanded(makeKey(achievementIndex, descIndex))) }}
+                {{ getLeadSource(description) }}
               </p>
 
-              <!-- Задачи -->
               <div v-if="description.bullets?.length" class="achievements__block">
                 <div class="achievements__block-title">
                   {{ description.bulletsTitle || 'Ключевые задачи' }}
                 </div>
 
-                <!-- preview -->
                 <ul class="achievements__list">
                   <li
-                    v-for="(item, i) in getBulletsPreview(description)"
+                    v-for="(item, i) in description.bullets"
                     :key="i"
                     class="achievements__list-item"
                   >
-                    <span v-html="item"></span>
+                    <span v-html="item" />
                   </li>
                 </ul>
-
-                <Collapse
-                  v-if="hasMoreBullets(description)"
-                  :when="isExpanded(makeKey(achievementIndex, descIndex))"
-                  class="achievements__collapse"
-                >
-                  <ul class="achievements__list achievements__list--more">
-                    <li
-                      v-for="(item, i) in getBulletsMore(description)"
-                      :key="`more-b-${i}`"
-                      class="achievements__list-item"
-                    >
-                      <span v-html="item"></span>
-                    </li>
-                  </ul>
-                </Collapse>
               </div>
 
-              <!-- Результаты -->
               <div v-if="description.results?.length" class="achievements__block">
                 <div class="achievements__block-title">
                   {{ description.resultTitle || 'Результат' }}
                 </div>
 
-                <!-- preview -->
                 <ul class="achievements__list achievements__list--result">
                   <li
-                    v-for="(item, i) in getResultsPreview(description)"
+                    v-for="(item, i) in description.results"
                     :key="i"
                     class="achievements__list-item"
                   >
-                    <span v-html="item"></span>
+                    <span v-html="item" />
                   </li>
                 </ul>
-
-                <Collapse
-                  v-if="hasMoreResults(description)"
-                  :when="isExpanded(makeKey(achievementIndex, descIndex))"
-                  class="achievements__collapse"
-                >
-                  <ul
-                    class="achievements__list achievements__list--result achievements__list--more"
-                  >
-                    <li
-                      v-for="(item, i) in getResultsMore(description)"
-                      :key="`more-r-${i}`"
-                      class="achievements__list-item"
-                    >
-                      <span v-html="item"></span>
-                    </li>
-                  </ul>
-                </Collapse>
               </div>
 
-              <!-- Старый формат результата -->
-              <p
-                v-else-if="description.resultTitle && description.result"
-                class="achievements__description-result-title"
-              >
-                {{ description.resultTitle }}
-                <span class="achievements__description-result-text">
-                  {{
-                    getOldResultText(description, isExpanded(makeKey(achievementIndex, descIndex)))
-                  }}
-                </span>
-              </p>
-
-              <!-- Теги -->
               <div v-if="description.stack?.length" class="achievements__tags">
                 <span v-for="tag in description.stack" :key="tag" class="achievements__tag">
                   {{ tag }}
                 </span>
               </div>
-
-              <!-- Toggle -->
-              <button
-                v-if="isCollapsible(description)"
-                type="button"
-                class="achievements__toggle"
-                @click="toggleExpanded(makeKey(achievementIndex, descIndex))"
-              >
-                {{ isExpanded(makeKey(achievementIndex, descIndex)) ? 'Свернуть' : 'Показать ещё' }}
-              </button>
             </div>
           </div>
         </div>
@@ -302,6 +156,7 @@ export default {
   font-size: 0.875rem;
   line-height: 1.29;
 }
+
 %text-l {
   font-family: var(--second-family);
   font-weight: 500;
@@ -601,10 +456,6 @@ export default {
     gap: 0.4rem;
   }
 
-  &__list--more {
-    margin-top: 0.35rem;
-  }
-
   &__list-item {
     @extend %text-m;
     color: vars.$color-label;
@@ -614,10 +465,6 @@ export default {
       color: vars.$color-title;
       font-weight: 700;
     }
-  }
-
-  &__collapse {
-    transition: height 280ms cubic-bezier(0.33, 1, 0.68, 1);
   }
 
   &__tags {
@@ -634,46 +481,6 @@ export default {
     background: vars.$color-label-highlight;
     color: vars.$color-text-highlight;
     line-height: 1.3;
-  }
-
-  &__description-result-title {
-    @extend %text-m;
-    margin-top: 0.1rem;
-    font-weight: 700;
-    color: vars.$color-title;
-  }
-
-  &__description-result-text {
-    @extend %text-m;
-    color: vars.$color-label;
-    white-space: pre-line;
-  }
-
-  &__toggle {
-    @extend %text-m;
-    align-self: flex-start;
-    margin-top: 0.25rem;
-    padding: 0.25rem 0.55rem;
-    border-radius: 10px;
-    border: 1px solid vars.$color-icon-bg;
-    background: #fff;
-    color: vars.$color-label;
-    cursor: pointer;
-    transition:
-      transform 120ms ease,
-      box-shadow 120ms ease;
-
-    &:hover {
-      box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.06),
-        0 2px 6px rgba(0, 0, 0, 0.06);
-      transform: translateY(-1px);
-    }
-
-    &:active {
-      transform: translateY(0);
-      box-shadow: none;
-    }
   }
 }
 </style>
