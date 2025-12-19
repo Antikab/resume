@@ -1,7 +1,7 @@
 import IconLink from '@/assets/icons/IconLink.svg'
 // import IconGeostyles from '@/assets/icons/IconGeostyles.svg'
-import IconTravalizer from '@/assets/icons/IconTravalizer.svg'
-import IconStore from '@/assets/icons/IconStore.svg'
+// import IconTravalizer from '@/assets/icons/IconTravalizer.svg'
+// import IconStore from '@/assets/icons/IconStore.svg'
 import IconArchTown from '@/assets/icons/IconArchTown.svg'
 import IconBrixForm from '@/assets/icons/IconBrixForm.svg'
 
@@ -26,27 +26,27 @@ const latestProjects = [
     iconLink: IconLink,
     link: 'https://brix-form.vercel.app/'
   },
-  {
-    jobTitle: 'Storage',
-    label: `Минималистичное приложение для загрузки и управления файлами в Firebase Storage.
-      Возможности: drag'n'drop и диалог выбора файлов, Список с именем, размером и датой загрузки, скачивание и удаление файлов, состояние хранится в Pinia.
+  // {
+  //   jobTitle: 'Storage',
+  //   label: `Минималистичное приложение для загрузки и управления файлами в Firebase Storage.
+  //     Возможности: drag'n'drop и диалог выбора файлов, Список с именем, размером и датой загрузки, скачивание и удаление файлов, состояние хранится в Pinia.
 
-      Стек: Vue 3 + Vite, Pinia, Vue Router, JS, TailwindCSS.
-      (Репозиторий: github.com/Antikab/storage - если не работает включите VPN)`,
-    icon: IconStore,
-    iconLink: IconLink,
-    link: 'https://storage-v2.vercel.app/'
-  },
-  {
-    jobTitle: 'Travalizer',
-    label: `Минималистичное приложение регистрацией/авторизацией через Firebase и каталогом покемонов из PokeAPI.
+  //     Стек: Vue 3 + Vite, Pinia, Vue Router, JS, TailwindCSS.
+  //     (Репозиторий: github.com/Antikab/storage - если не работает включите VPN)`,
+  //   icon: IconStore,
+  //   iconLink: IconLink,
+  //   link: 'https://storage-v2.vercel.app/'
+  // },
+  // {
+  //   jobTitle: 'Travalizer',
+  //   label: `Минималистичное приложение регистрацией/авторизацией через Firebase и каталогом покемонов из PokeAPI.
 
-      Стек: Vue.js 3, TailwindCSS.
-      (Репозиторий: github.com/Antikab/travalizer - если не работает включите VPN)`,
-    icon: IconTravalizer,
-    iconLink: IconLink,
-    link: 'https://travalizer.vercel.app/'
-  }
+  //     Стек: Vue.js 3, TailwindCSS.
+  //     (Репозиторий: github.com/Antikab/travalizer - если не работает включите VPN)`,
+  //   icon: IconTravalizer,
+  //   iconLink: IconLink,
+  //   link: 'https://travalizer.vercel.app/'
+  // }
 
   // {
   //   jobTitle: 'GeoServer Styles Manager',
