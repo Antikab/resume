@@ -1,9 +1,7 @@
 import IconLink from '@/assets/icons/IconLink.svg'
-// import IconGeostyles from '@/assets/icons/IconGeostyles.svg'
-// import IconTravalizer from '@/assets/icons/IconTravalizer.svg'
-// import IconStore from '@/assets/icons/IconStore.svg'
 import IconArchTown from '@/assets/icons/IconArchTown.svg'
 import IconBrixForm from '@/assets/icons/IconBrixForm.svg'
+import IconWeatherWidget from '@/assets//icons/IconWeatherWidget.svg'
 
 const latestProjects = [
   {
@@ -26,38 +24,16 @@ const latestProjects = [
     iconLink: IconLink,
     link: 'https://brix-form.vercel.app/'
   },
-  // {
-  //   jobTitle: 'Storage',
-  //   label: `Минималистичное приложение для загрузки и управления файлами в Firebase Storage.
-  //     Возможности: drag'n'drop и диалог выбора файлов, Список с именем, размером и датой загрузки, скачивание и удаление файлов, состояние хранится в Pinia.
+  {
+    jobTitle: 'Weather widget',
+    label: `Минималистичный погодный виджет на Vue 3 с динамическим фоном и автоматическим определением местоположения. Показывает текущую температуру, мин/макс значения, описание погоды и иконку — данные берутся из OpenWeatherMap API, фоновые изображения загружаются через Pexels API.
 
-  //     Стек: Vue 3 + Vite, Pinia, Vue Router, JS, TailwindCSS.
-  //     (Репозиторий: github.com/Antikab/storage - если не работает включите VPN)`,
-  //   icon: IconStore,
-  //   iconLink: IconLink,
-  //   link: 'https://storage-v2.vercel.app/'
-  // },
-  // {
-  //   jobTitle: 'Travalizer',
-  //   label: `Минималистичное приложение регистрацией/авторизацией через Firebase и каталогом покемонов из PokeAPI.
-
-  //     Стек: Vue.js 3, TailwindCSS.
-  //     (Репозиторий: github.com/Antikab/travalizer - если не работает включите VPN)`,
-  //   icon: IconTravalizer,
-  //   iconLink: IconLink,
-  //   link: 'https://travalizer.vercel.app/'
-  // }
-
-  // {
-  //   jobTitle: 'GeoServer Styles Manager',
-  //   label: `Проект для работы со стилями.
-  //     Загрузка, поиск, фильтрация, пагинация, создание новых, отображение прогресса загрузки и логов.
-  //     Стек: Next.js, React, Prisma, Supabase, TailwindCSS.
-  //     (Репозиторий: github.com/Antikab/geostyle)`,
-  //   icon: IconGeostyles,
-  //   iconLink: IconLink,
-  //   link: 'https://geostyles.vercel.app/'
-  // }
+      Стек: Vue.js 3, TailwindCSS.
+      (Репозиторий: https://github.com/Antikab/weather)`,
+    icon: IconWeatherWidget,
+    iconLink: IconLink,
+    link: 'https://widgetweather.vercel.app/'
+  }
 ]
 
 export { latestProjects }

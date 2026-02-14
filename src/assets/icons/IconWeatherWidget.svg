@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Colors: можно менять через currentColor если захочешь -->
+  <defs>
+    <style>
+      .stroke { stroke: #0B73D9; stroke-width: 26; stroke-linecap: round; stroke-linejoin: round; }
+      .fillCloud { fill: #DDF6F6; }
+      .fillShadow { fill: #BFEAF0; opacity: .55; }
+      .fillSky { fill: none; }
+    </style>
+  </defs>
+
+  <!-- Sun (ring) -->
+  <circle class="stroke" cx="360" cy="156" r="70"/>
+
+  <!-- Sun rays -->
+  <path class="stroke" d="M360 46v28"/>
+  <path class="stroke" d="M360 238v28"/>
+  <path class="stroke" d="M250 156h28"/>
+  <path class="stroke" d="M442 156h28"/>
+  <path class="stroke" d="M285 81l20 20"/>
+  <path class="stroke" d="M415 211l20 20"/>
+  <path class="stroke" d="M435 81l-20 20"/>
+  <path class="stroke" d="M305 211l-20 20"/>
+
+  <!-- Cloud fill -->
+  <path class="fillCloud" d="
+    M168 348
+    C118 348 78 312 78 266
+    C78 222 115 186 162 186
+    C175 134 223 96 280 96
+    C349 96 406 151 406 218
+    C444 229 472 261 472 300
+    C472 343 436 378 392 378
+    L168 378
+    C168 378 168 378 168 348
+    Z
+  "/>
+
+  <!-- Cloud shadow / second layer -->
+  <path class="fillShadow" d="
+    M175 342
+    C141 342 113 318 113 288
+    C113 258 138 234 170 234
+    C178 201 210 176 248 176
+    C294 176 332 213 332 258
+    C358 265 377 287 377 315
+    C377 342 354 364 327 364
+    L175 364
+    Z
+  "/>
+
+  <!-- Cloud outline -->
+  <path class="stroke" d="
+    M168 362
+    C118 362 78 326 78 280
+    C78 236 115 200 162 200
+    C175 148 223 110 280 110
+    C349 110 406 165 406 232
+    C444 243 472 275 472 314
+    C472 357 436 392 392 392
+    L168 392
+    Z
+  "/>
+
+  <!-- Rain drops -->
+  <path class="stroke" d="M180 430l-20 30"/>
+  <path class="stroke" d="M250 430l-20 30"/>
+  <path class="stroke" d="M320 430l-20 30"/>
+  <path class="stroke" d="M215 460l-20 30"/>
+  <path class="stroke" d="M285 460l-20 30"/>
+</svg>
