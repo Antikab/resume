@@ -1,7 +1,8 @@
 import IconMail from '@/assets/icons/IconMail.svg'
-import IconLink from '@/assets/icons/IconLink.svg'
 import IconPhone from '@/assets/icons/IconPhone.svg'
 import IconAddress from '@/assets/icons/IconAddress.svg'
+import IconGitHub from '@/assets/icons/IconGitHub.svg'
+import IconTelegram from '@/assets/icons/IconTelegram.svg'
 
 const contacts = [
   {
@@ -11,9 +12,14 @@ const contacts = [
     icon: IconMail
   },
   {
-    label: 'Визитка',
-    value: 'https://antikab.github.io/bat-it/',
-    icon: IconLink
+    label: 'Telegram',
+    value: 'https://t.me/ProArS',
+    icon: IconTelegram
+  },
+  {
+    label: 'GitHub',
+    value: 'https://github.com/Antikab',
+    icon: IconGitHub
   },
   {
     label: 'Телефон',

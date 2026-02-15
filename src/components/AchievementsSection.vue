@@ -12,15 +12,18 @@ export default {
   },
   data() {
     return {
-      expandedDescriptions: {
-        '0-0': true
-      }
+      expandedDescriptions: {}
     }
   },
   methods: {
     isExpanded(achievementIndex, descIndex) {
       const key = `${achievementIndex}-${descIndex}`
-      return Boolean(this.expandedDescriptions[key])
+
+      if (Object.prototype.hasOwnProperty.call(this.expandedDescriptions, key)) {
+        return this.expandedDescriptions[key]
+      }
+
+      return achievementIndex === 0
     },
     toggleDescription(achievementIndex, descIndex) {
       const key = `${achievementIndex}-${descIndex}`
@@ -119,10 +122,6 @@ export default {
                   {{ isExpanded(achievementIndex, descIndex) ? 'Скрыть' : 'Подробнее' }}
                 </button>
               </div>
-              <h3 v-if="description.descriptionTitle" class="achievements__description-title">
-                {{ description.descriptionTitle }}
-              </h3>
-
               <p v-if="getLeadSource(description)" class="achievements__lead">
                 {{ getLeadSource(description) }}
               </p>

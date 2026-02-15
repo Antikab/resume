@@ -52,17 +52,23 @@ export default {
               <span class="latest-projects__label">{{ latestProject.label }}</span>
             </div>
           </div>
-          <a
-            :href="latestProject.link"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="latest-projects__link"
-          >
-            <div class="latest-projects__link-icon-wrapper">
-              <inline-svg class="latest-projects__link-icon" :src="latestProject.iconLink" />
-            </div>
-            {{ formatLink(latestProject.link) }}
-          </a>
+          <div class="latest-projects__links-wrapper">
+            <a
+              v-for="(projectLink, linkIndex) in latestProject.links || [
+                { text: 'Открыть', url: latestProject.link }
+              ]"
+              :key="`${index}-${linkIndex}`"
+              :href="projectLink.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="latest-projects__link"
+            >
+              <div class="latest-projects__link-icon-wrapper">
+                <inline-svg class="latest-projects__link-icon" :src="latestProject.iconLink" />
+              </div>
+              {{ projectLink.text }} — {{ formatLink(projectLink.url) }}
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -285,6 +291,11 @@ export default {
     }
   }
 
+  &__links-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
   &__link {
     @extend %text-m-second;
     display: flex;

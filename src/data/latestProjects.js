@@ -6,33 +6,56 @@ import IconWeatherWidget from '@/assets//icons/IconWeatherWidget.svg'
 const latestProjects = [
   {
     jobTitle: 'ArchTown Platform',
-    label: `Платформа для создания и обмена контентом для продвижения инноваций. Публикация постов, загрузка видео, обсуждение идей, подписки, лайки, комментарии и категории.
+    label: `Контентная платформа с публикацией постов и видео, комментариями, подписками и системой категорий.
 
-      Стек: Nuxt.js 3, Vue.js 3, Pinia, Pinia ORM, TailwindCSS, Strapi.
-      (archtown.org не работает? включите VPN)`,
+Отвечал за улучшение UX ключевых сценариев и стабильность видеоплеера во всех основных браузерах (включая ограничения Safari по autoplay и gesture policies).
+Оптимизировал пользовательские сценарии публикации, поиска и навигации.
+
+Стек: Nuxt 3, Vue 3, Pinia, TailwindCSS, Strapi.`,
     icon: IconArchTown,
-    iconLink: IconLink,
-    link: 'https://archtown.org/'
+    links: [
+      {
+        text: 'Live',
+        url: 'https://archtown.org/'
+      }
+    ],
+    iconLink: IconLink
   },
   {
     jobTitle: 'Brix Form',
-    label: `Brix-form ― это многошаговая форма, предназначенная для сбора данных о проекте и расчёта стоимости. Пользователь проходит несколько экранов, валидация выполняется на каждом этапе, а итоговые данные сохраняются в браузере.
+    label: `Многошаговая форма для сбора данных и предварительной оценки проекта. Валидация на каждом шаге и сохранение прогресса в браузере.
 
-      Стек: Vue.js 3, TailwindCSS.
-      (Репозиторий: github.com/Antikab/brix-form)`,
+      Стек: Vue 3, TailwindCSS.`,
     icon: IconBrixForm,
-    iconLink: IconLink,
-    link: 'https://brix-form.vercel.app/'
+    links: [
+      {
+        text: 'Live demo',
+        url: 'https://brix-form.vercel.app/'
+      },
+      {
+        text: 'Repository',
+        url: 'https://github.com/Antikab/brix-form'
+      }
+    ],
+    iconLink: IconLink
   },
   {
     jobTitle: 'Weather widget',
-    label: `Минималистичный погодный виджет на Vue 3 с динамическим фоном и автоматическим определением местоположения. Показывает текущую температуру, мин/макс значения, описание погоды и иконку — данные берутся из OpenWeatherMap API, фоновые изображения загружаются через Pexels API.
+    label: `Минималистичный погодный виджет на Vue 3 с динамическим фоном и автоопределением локации.
 
-      Стек: Vue.js 3, TailwindCSS.
-      (Репозиторий: https://github.com/Antikab/weather)`,
+      Стек: Vue 3, TailwindCSS, OpenWeatherMap API, Pexels API.`,
     icon: IconWeatherWidget,
-    iconLink: IconLink,
-    link: 'https://widgetweather.vercel.app/'
+    links: [
+      {
+        text: 'Live demo',
+        url: 'https://widgetweather.vercel.app/'
+      },
+      {
+        text: 'Repository',
+        url: 'https://github.com/Antikab/weather'
+      }
+    ],
+    iconLink: IconLink
   }
 ]
 

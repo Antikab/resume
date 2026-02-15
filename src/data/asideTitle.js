@@ -1,6 +1,6 @@
 const asideTitle = {
   titleContacts: 'Контакты',
-  titleSocials: 'Социальные сети',
+  titleSocials: 'Профили',
   titleLangs: 'Языки',
   titleHobbies: 'Хобби и интересы'
 }

@@ -1,6 +1,6 @@
 import IconJs from '@/assets/icons/IconJs.svg'
 import IconTs from '@/assets/icons/IconTs.svg'
-import IconBem from '@/assets/icons/IconBem.svg'
+import IconGitHub from '@/assets/icons/IconGitHub.svg'
 import IconCss from '@/assets/icons/IconCss.svg'
 import IconVue from '@/assets/icons/IconVue.svg'
 import IconNode from '@/assets/icons/IconNode.svg'
@@ -19,94 +19,43 @@ import IconPostgresql from '@/assets/icons/IconPostgresql.svg'
 
 const toolsSkills = [
   {
-    value: 'TypeScript',
-    label: 'Типизированное надмножество JavaScript',
-    icon: IconTs
+    group: 'Core',
+    items: [
+      { value: 'TypeScript', label: 'Типизированный JS', icon: IconTs },
+      { value: 'Vue 3', label: 'UI-фреймворк', icon: IconVue },
+      { value: 'React', label: 'UI-библиотека', icon: IconReact },
+      { value: 'JavaScript', label: 'Язык программирования', icon: IconJs },
+      { value: 'HTML/CSS', label: 'Верстка и стили', icon: IconHtml }
+    ]
   },
   {
-    value: 'Vue.js',
-    label: 'Фреймворк UI',
-    icon: IconVue
+    group: 'Backend/Data',
+    items: [
+      { value: 'Node.js', label: 'Серверный runtime', icon: IconNode },
+      { value: 'Express', label: 'Web-фреймворк', icon: IconExpress },
+      { value: 'PostgreSQL', label: 'Реляционные данные', icon: IconPostgresql },
+      { value: 'PostGIS', label: 'Геоданные в PostgreSQL', icon: IconPostgresql },
+      { value: 'Prisma', label: 'ORM', icon: IconPrisma }
+    ]
   },
   {
-    value: 'Nuxt.js',
-    label: 'Фреймворк Vue',
-    icon: IconNuxt
+    group: 'Tools',
+    items: [
+      { value: 'Git/GitHub', label: 'Контроль версий', icon: IconGitHub },
+      { value: 'Postman', label: 'API testing', icon: IconPostman },
+      { value: 'Strapi', label: 'Headless CMS', icon: IconStrapi },
+      { value: 'TailwindCSS', label: 'CSS utility-first', icon: IconTailwind },
+      { value: 'Next.js', label: 'React framework', icon: IconNext },
+      { value: 'Nuxt', label: 'Vue framework', icon: IconNuxt },
+      { value: 'BEM', label: 'CSS-методология', icon: IconCss }
+    ]
   },
   {
-    value: 'React',
-    label: 'Библиотека UI',
-    icon: IconReact
-  },
-  {
-    value: 'Next.js',
-    label: 'Фреймворк React',
-    icon: IconNext
-  },
-  {
-    value: 'JavaScript',
-    label: 'Язык программирования',
-    icon: IconJs
-  },
-  {
-    value: 'HTML5',
-    label: 'Язык разметки',
-    icon: IconHtml
-  },
-  {
-    value: 'CSS3',
-    label: 'Стилизация страниц',
-    icon: IconCss
-  },
-  {
-    value: 'TailwindCSS',
-    label: 'Утилитарный CSS-фреймворк',
-    icon: IconTailwind
-  },
-  {
-    value: 'BEM',
-    label: 'Методология CSS',
-    icon: IconBem
-  },
-  {
-    value: 'Node.js',
-    label: 'Серверный JavaScript',
-    icon: IconNode
-  },
-  {
-    value: 'Express',
-    label: 'Минималистичный веб-фреймворк',
-    icon: IconExpress
-  },
-  {
-    value: 'Strapi',
-    label: 'Headless CMS',
-    icon: IconStrapi
-  },
-  {
-    value: 'PostgreSQL',
-    label: 'Реляционная база данных',
-    icon: IconPostgresql
-  },
-  {
-    value: 'Prisma',
-    label: 'ORM для баз',
-    icon: IconPrisma
-  },
-  {
-    value: 'Postman',
-    label: 'Тестирование API',
-    icon: IconPostman
-  },
-  {
-    value: 'Adobe Photoshop',
-    label: 'Графический редактор',
-    icon: IconPhotoshop
-  },
-  {
-    value: 'Figma',
-    label: 'Дизайн интерфейсов',
-    icon: IconFigma
+    group: 'Basic tools',
+    items: [
+      { value: 'Figma', label: 'Базовый UI-дизайн', icon: IconFigma },
+      { value: 'Photoshop', label: 'Базовая графика', icon: IconPhotoshop }
+    ]
   }
 ]
 

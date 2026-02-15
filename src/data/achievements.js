@@ -10,14 +10,14 @@ const achievements = [
     iconLocation: IconAddress,
     location: 'Москва',
     iconCompany: IconGlavapu,
-    jobTitle: 'Full-Stack Developer',
+    jobTitle: 'Frontend Engineer',
     company: 'ГлавАПУ',
     descriptions: [
       {
         descriptionLead: `
-          Product-oriented Full-Stack Developer (Vue 3 + TypeScript).
-          Проектирую и реализую data-heavy веб-продукты: от UX интерактивной карты до серверных агрегаций и автоматизированной отчётности.
-          Беру end-to-end ownership фич — от пользовательского сценария до производительности SQL и масштабируемости API.
+          Frontend-инженер с архитектурным фокусом (Vue 3 + TypeScript).
+          Проектирую data-intensive интерфейсы и продуктовые сценарии, учитывая масштаб API и SQL-слоя.
+          Беру end-to-end ответственность за фичи: от UX и frontend-архитектуры до надёжности интеграций и производительности системы.
         `
       },
 
