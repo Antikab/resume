@@ -1,11 +1,34 @@
 <script>
+import { Collapse } from 'vue-collapsed'
+
 export default {
   name: 'AchievementsSection',
+  components: {
+    Collapse
+  },
   props: {
     mainTitle: Object,
     achievements: Array
   },
+  data() {
+    return {
+      expandedDescriptions: {
+        '0-0': true
+      }
+    }
+  },
   methods: {
+    isExpanded(achievementIndex, descIndex) {
+      const key = `${achievementIndex}-${descIndex}`
+      return Boolean(this.expandedDescriptions[key])
+    },
+    toggleDescription(achievementIndex, descIndex) {
+      const key = `${achievementIndex}-${descIndex}`
+      this.expandedDescriptions[key] = !this.expandedDescriptions[key]
+    },
+    getDescriptionId(achievementIndex, descIndex) {
+      return `achievement-description-${achievementIndex}-${descIndex}`
+    },
     getLeadSource(d) {
       return (d.descriptionLead || d.descriptionJob || '').trim()
     }
@@ -76,6 +99,26 @@ export default {
               :key="descIndex"
               class="achievements__description"
             >
+              <div class="achievements__description-header">
+                <h3 v-if="description.descriptionTitle" class="achievements__description-title">
+                  {{ description.descriptionTitle }}
+                </h3>
+
+                <button
+                  v-if="
+                    description.bullets?.length ||
+                    description.results?.length ||
+                    description.stack?.length
+                  "
+                  type="button"
+                  class="achievements__toggle"
+                  :aria-expanded="isExpanded(achievementIndex, descIndex)"
+                  :aria-controls="getDescriptionId(achievementIndex, descIndex)"
+                  @click="toggleDescription(achievementIndex, descIndex)"
+                >
+                  {{ isExpanded(achievementIndex, descIndex) ? 'Скрыть' : 'Подробнее' }}
+                </button>
+              </div>
               <h3 v-if="description.descriptionTitle" class="achievements__description-title">
                 {{ description.descriptionTitle }}
               </h3>
@@ -84,43 +127,50 @@ export default {
                 {{ getLeadSource(description) }}
               </p>
 
-              <div v-if="description.bullets?.length" class="achievements__block">
-                <div class="achievements__block-title">
-                  {{ description.bulletsTitle || 'Ключевые задачи' }}
+              <Collapse :when="isExpanded(achievementIndex, descIndex)">
+                <div
+                  :id="getDescriptionId(achievementIndex, descIndex)"
+                  class="achievements__collapsible-content"
+                >
+                  <div v-if="description.bullets?.length" class="achievements__block">
+                    <div class="achievements__block-title">
+                      {{ description.bulletsTitle || 'Ключевые задачи' }}
+                    </div>
+
+                    <ul class="achievements__list">
+                      <li
+                        v-for="(item, i) in description.bullets"
+                        :key="i"
+                        class="achievements__list-item"
+                      >
+                        <span v-html="item" />
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div v-if="description.results?.length" class="achievements__block">
+                    <div class="achievements__block-title">
+                      {{ description.resultTitle || 'Результат' }}
+                    </div>
+
+                    <ul class="achievements__list achievements__list--result">
+                      <li
+                        v-for="(item, i) in description.results"
+                        :key="i"
+                        class="achievements__list-item"
+                      >
+                        <span v-html="item" />
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div v-if="description.stack?.length" class="achievements__tags">
+                    <span v-for="tag in description.stack" :key="tag" class="achievements__tag">
+                      {{ tag }}
+                    </span>
+                  </div>
                 </div>
-
-                <ul class="achievements__list">
-                  <li
-                    v-for="(item, i) in description.bullets"
-                    :key="i"
-                    class="achievements__list-item"
-                  >
-                    <span v-html="item" />
-                  </li>
-                </ul>
-              </div>
-
-              <div v-if="description.results?.length" class="achievements__block">
-                <div class="achievements__block-title">
-                  {{ description.resultTitle || 'Результат' }}
-                </div>
-
-                <ul class="achievements__list achievements__list--result">
-                  <li
-                    v-for="(item, i) in description.results"
-                    :key="i"
-                    class="achievements__list-item"
-                  >
-                    <span v-html="item" />
-                  </li>
-                </ul>
-              </div>
-
-              <div v-if="description.stack?.length" class="achievements__tags">
-                <span v-for="tag in description.stack" :key="tag" class="achievements__tag">
-                  {{ tag }}
-                </span>
-              </div>
+              </Collapse>
             </div>
           </div>
         </div>
@@ -417,6 +467,28 @@ export default {
     background: rgba(0, 0, 0, 0.015);
   }
 
+  &__description-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  &__toggle {
+    @extend %text-sm;
+    border: 1px solid vars.$color-icon-bg;
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
+    background: #fff;
+    color: vars.$color-title;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background: vars.$color-label-highlight;
+    }
+  }
+
   &__description-title {
     @extend %text-m;
     margin-bottom: 0.1rem;
@@ -433,6 +505,12 @@ export default {
     color: vars.$color-label;
     line-height: 1.55;
     white-space: pre-line;
+  }
+
+  &__collapsible-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
   }
 
   &__block {

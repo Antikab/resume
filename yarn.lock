@@ -2071,10 +2071,10 @@ vite@^6.0.5:
   optionalDependencies:
     fsevents "~2.3.3"
 
-vue-collapsed@^1.3.4:
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/vue-collapsed/-/vue-collapsed-1.3.4.tgz#a6fb130d8eda720b295fbf362c78436b7b1e89a0"
-  integrity sha512-W92b+QT3n5iTrfrH6kyvx3TsriYPfy/Ymsb6DaanjeMkJYMdVl1S4wzKRYVDsxWQPDxiC+5m+UwPwT/8YAYodA==
+vue-collapsed@^1.3.5:
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/vue-collapsed/-/vue-collapsed-1.3.5.tgz#1ba8e03384d2b0e894e157331cf77ec7ddb8d1dd"
+  integrity sha512-U6wCa4mFpaX2Fr9BWtGNPte3SAgtpk1NjeS/NRLHDHu2fDs3/MQ3W13pvWXy5BGbtz14HxzSq6efC9WrHblozQ==
 
 vue-eslint-parser@^9.4.3:
   version "9.4.3"

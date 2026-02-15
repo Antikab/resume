@@ -47,10 +47,7 @@ export default {
               <p class="education__degree">{{ item.degree }}</p>
             </a>
             <p class="education__years">{{ item.years }}</p>
-            <p class="education__percentage">
-              <span class="education__percentage--highlight">{{ item.labelPercentage }}</span> -
-              {{ item.percentage }}
-            </p>
+            <p class="education__details-text">{{ item.details }}</p>
           </div>
         </div>
       </div>
@@ -294,18 +291,13 @@ export default {
     }
   }
 
-  &__percentage {
-    font-weight: 400;
-    font-size: 0.75rem;
-    letter-spacing: 0.01em;
+  &__details-text {
+    @extend %text-sm;
     color: vars.$color-label;
-
-    &--highlight {
-      color: vars.$color-text-highlight-secondary;
-    }
+    max-width: 36ch;
 
     @media (min-width: 1440px) {
-      font-size: 0.9rem;
+      font-size: 0.75rem;
     }
   }
 }
