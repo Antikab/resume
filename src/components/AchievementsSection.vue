@@ -3,17 +3,19 @@ import { Collapse } from 'vue-collapsed'
 
 export default {
   name: 'AchievementsSection',
+  data() {
+    return {
+      expandedDescriptions: {},
+      defaultExpandedTitle:
+        'Проект: glavapu-stat — data-driven аналитика территорий (районы и пользовательские контуры)'
+    }
+  },
   components: {
     Collapse
   },
   props: {
     mainTitle: Object,
     achievements: Array
-  },
-  data() {
-    return {
-      expandedDescriptions: {}
-    }
   },
   methods: {
     isExpanded(achievementIndex, descIndex) {
@@ -23,11 +25,12 @@ export default {
         return this.expandedDescriptions[key]
       }
 
-      return achievementIndex === 0
+      const description = this.achievements?.[achievementIndex]?.descriptions?.[descIndex]
+      return description?.descriptionTitle === this.defaultExpandedTitle
     },
     toggleDescription(achievementIndex, descIndex) {
       const key = `${achievementIndex}-${descIndex}`
-      this.expandedDescriptions[key] = !this.expandedDescriptions[key]
+      this.expandedDescriptions[key] = !this.isExpanded(achievementIndex, descIndex)
     },
     getDescriptionId(achievementIndex, descIndex) {
       return `achievement-description-${achievementIndex}-${descIndex}`
@@ -119,7 +122,7 @@ export default {
                   :aria-controls="getDescriptionId(achievementIndex, descIndex)"
                   @click="toggleDescription(achievementIndex, descIndex)"
                 >
-                  {{ isExpanded(achievementIndex, descIndex) ? 'Скрыть' : 'Подробнее' }}
+                  {{ isExpanded(achievementIndex, descIndex) ? 'Скрыть' : 'Показать' }}
                 </button>
               </div>
               <p v-if="getLeadSource(description)" class="achievements__lead">
