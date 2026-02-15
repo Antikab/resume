@@ -1,8 +1,6 @@
 import IconMail from '@/assets/icons/IconMail.svg'
 import IconPhone from '@/assets/icons/IconPhone.svg'
 import IconAddress from '@/assets/icons/IconAddress.svg'
-import IconGitHub from '@/assets/icons/IconGitHub.svg'
-import IconTelegram from '@/assets/icons/IconTelegram.svg'
 
 const contacts = [
   {
@@ -10,16 +8,6 @@ const contacts = [
     value: 'arsprosvet@mail.ru',
     hrefPrefix: 'mailto:',
     icon: IconMail
-  },
-  {
-    label: 'Telegram',
-    value: 'https://t.me/ProArS',
-    icon: IconTelegram
-  },
-  {
-    label: 'GitHub',
-    value: 'https://github.com/Antikab',
-    icon: IconGitHub
   },
   {
     label: 'Телефон',
