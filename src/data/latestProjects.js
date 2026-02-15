@@ -16,7 +16,7 @@ const latestProjects = [
     links: [
       {
         text: 'Live',
-        url: 'https://archtown.org/'
+        url: 'https://archtown.org'
       }
     ],
     iconLink: IconLink
@@ -30,7 +30,7 @@ const latestProjects = [
     links: [
       {
         text: 'Live demo',
-        url: 'https://brix-form.vercel.app/'
+        url: 'https://brix-form.vercel.app'
       },
       {
         text: 'Repository',
@@ -48,7 +48,7 @@ const latestProjects = [
     links: [
       {
         text: 'Live demo',
-        url: 'https://widgetweather.vercel.app/'
+        url: 'https://widgetweather.vercel.app'
       },
       {
         text: 'Repository',
