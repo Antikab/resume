@@ -283,7 +283,7 @@ export default {
 
     @media (min-width: 1200px) {
       margin-right: -1.6rem;
-      font-size: 1.125rem;
+      font-size: 1rem;
     }
   }
 

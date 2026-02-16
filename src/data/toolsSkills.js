@@ -10,7 +10,6 @@ import IconHtml from '@/assets/icons/IconHtml.svg'
 import IconFigma from '@/assets/icons/IconFigma.svg'
 import IconReact from '@/assets/icons/IconReact.svg'
 import IconPrisma from '@/assets/icons/IconPrisma.svg'
-import IconStrapi from '@/assets/icons/IconStrapi.svg'
 import IconPostman from '@/assets/icons/IconPostman.svg'
 import IconExpress from '@/assets/icons/IconExpress.svg'
 import IconTailwind from '@/assets/icons/IconTailwind.svg'
@@ -19,41 +18,47 @@ import IconPostgresql from '@/assets/icons/IconPostgresql.svg'
 
 const toolsSkills = [
   {
-    group: 'Core',
+    group: 'Frontend Engineering',
+    description: 'Компонентная архитектура, состояние, типизация, сложные UI-сценарии.',
     items: [
-      { value: 'TypeScript', label: 'Типизированный JS', icon: IconTs },
-      { value: 'Vue 3', label: 'UI-фреймворк', icon: IconVue },
-      { value: 'React', label: 'UI-библиотека', icon: IconReact },
-      { value: 'JavaScript', label: 'Язык программирования', icon: IconJs },
-      { value: 'HTML/CSS', label: 'Верстка и стили', icon: IconHtml }
+      { value: 'TypeScript', label: 'Типизация, API-контракты, refactor-safe', icon: IconTs },
+      { value: 'Vue 3', label: 'Composition API, архитектура компонентов', icon: IconVue },
+      { value: 'React', label: 'Hooks, композиция, переиспользование', icon: IconReact },
+      { value: 'JavaScript', label: 'Асинхронность, события, runtime-поведение', icon: IconJs },
+      { value: 'HTML/CSS', label: 'Семантика, доступность, layout', icon: IconHtml }
     ]
   },
   {
-    group: 'Backend/Data',
+    group: 'Data & Integrations',
+    description: 'Интеграции с backend, геоданные, производительность запросов, надежность данных.',
     items: [
-      { value: 'Node.js', label: 'Серверный runtime', icon: IconNode },
-      { value: 'Express', label: 'Web-фреймворк', icon: IconExpress },
-      { value: 'PostgreSQL', label: 'Реляционные данные', icon: IconPostgresql },
-      { value: 'PostGIS', label: 'Геоданные в PostgreSQL', icon: IconPostgresql },
-      { value: 'Prisma', label: 'ORM', icon: IconPrisma }
+      { value: 'Node.js', label: 'Интеграционные сервисы / утилиты', icon: IconNode },
+      { value: 'Express', label: 'API-слой, middleware, error handling', icon: IconExpress },
+      { value: 'PostgreSQL', label: 'Агрегации, индексы, оптимизация', icon: IconPostgresql },
+      { value: 'PostGIS', label: 'Spatial-операции и расчёты геометрии', icon: IconPostgresql },
+      { value: 'Prisma', label: 'Типобезопасный доступ к данным', icon: IconPrisma }
     ]
   },
   {
-    group: 'Tools',
+    group: 'Delivery & Product Infrastructure',
+    description: 'Поставка фич, качество, контроль изменений, поддерживаемость кодовой базы.',
     items: [
-      { value: 'Git/GitHub', label: 'Контроль версий', icon: IconGitHub },
-      { value: 'Postman', label: 'API testing', icon: IconPostman },
-      { value: 'Strapi', label: 'Headless CMS', icon: IconStrapi },
-      { value: 'TailwindCSS', label: 'CSS utility-first', icon: IconTailwind },
-      { value: 'Next.js', label: 'React framework', icon: IconNext },
-      { value: 'Nuxt', label: 'Vue framework', icon: IconNuxt },
-      { value: 'BEM', label: 'CSS-методология', icon: IconCss }
+      { value: 'Next.js', label: 'SSR/SSG, routing, app architecture', icon: IconNext },
+      { value: 'Nuxt', label: 'SSR/SSG, routing, app architecture', icon: IconNuxt },
+      { value: 'Git (GitHub)', label: 'Code review, ветвление, релизы', icon: IconGitHub },
+      { value: 'API tooling', label: 'Контракт, отладка, тестирование', icon: IconPostman },
+      {
+        value: 'TailwindCSS',
+        label: 'Design tokens, scale, скорость разработки',
+        icon: IconTailwind
+      },
+      { value: 'CSS architecture', label: 'Структура стилей (BEM / utility)', icon: IconCss }
     ]
   },
   {
-    group: 'Basic tools',
+    group: 'Design Tools',
     items: [
-      { value: 'Figma', label: 'Базовый UI-дизайн', icon: IconFigma },
+      { value: 'Figma', label: 'UI спеки, компоненты, handoff', icon: IconFigma },
       { value: 'Photoshop', label: 'Базовая графика', icon: IconPhotoshop }
     ]
   }

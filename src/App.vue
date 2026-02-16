@@ -8,7 +8,6 @@ import { languages } from '@/data/languages'
 import { asideTitle } from '@/data/asideTitle'
 import { toolsSkills } from '@/data/toolsSkills'
 import { achievements } from '@/data/achievements'
-import { certificates } from '@/data/certificates'
 import { latestProjects } from '@/data/latestProjects'
 import { hobbiesInterests } from '@/data/hobbiesInterests'
 
@@ -16,7 +15,6 @@ import MainLayout from '@/layouts/MainLayout.vue'
 import EducationSection from '@/components/EducationSection.vue'
 import ToolsSkillsSection from '@/components/ToolsSkillsSection.vue'
 import AchievementsSection from '@/components/AchievementsSection.vue'
-import CertificatesSection from '@/components/CertificatesSection.vue'
 import LatestProjectsSection from '@/components/LatestProjectsSection.vue'
 
 export default {
@@ -26,7 +24,6 @@ export default {
     EducationSection,
     ToolsSkillsSection,
     AchievementsSection,
-    CertificatesSection,
     LatestProjectsSection
   },
   data() {
@@ -40,7 +37,6 @@ export default {
       asideTitle,
       toolsSkills,
       achievements,
-      certificates,
       latestProjects,
       hobbiesInterests
     }
@@ -61,6 +57,5 @@ export default {
     <AchievementsSection :mainTitle="mainTitle" :achievements="achievements" />
     <ToolsSkillsSection :mainTitle="mainTitle" :toolsSkills="toolsSkills" />
     <LatestProjectsSection :mainTitle="mainTitle" :latestProjects="latestProjects" />
-    <CertificatesSection :mainTitle="mainTitle" :certificates="certificates" />
   </MainLayout>
 </template>

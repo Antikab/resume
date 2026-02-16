@@ -20,9 +20,10 @@ export default {
   methods: {
     isExpanded(achievementIndex, descIndex) {
       const key = `${achievementIndex}-${descIndex}`
+      const expandedValue = this.expandedDescriptions[key]
 
-      if (Object.prototype.hasOwnProperty.call(this.expandedDescriptions, key)) {
-        return this.expandedDescriptions[key]
+      if (typeof expandedValue === 'boolean') {
+        return expandedValue
       }
 
       const description = this.achievements?.[achievementIndex]?.descriptions?.[descIndex]
@@ -30,7 +31,12 @@ export default {
     },
     toggleDescription(achievementIndex, descIndex) {
       const key = `${achievementIndex}-${descIndex}`
-      this.expandedDescriptions[key] = !this.isExpanded(achievementIndex, descIndex)
+      const nextValue = !this.isExpanded(achievementIndex, descIndex)
+
+      this.expandedDescriptions = {
+        ...this.expandedDescriptions,
+        [key]: nextValue
+      }
     },
     getDescriptionId(achievementIndex, descIndex) {
       return `achievement-description-${achievementIndex}-${descIndex}`
@@ -329,17 +335,10 @@ export default {
   }
 
   &__experience {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-
-    @media (min-width: 768px) {
-      min-width: 230px;
-    }
-
-    @media (min-width: 1440px) {
-      min-width: 270px;
-    }
   }
 
   &__date-place {
@@ -478,10 +477,10 @@ export default {
 
   &__toggle {
     @extend %text-sm;
+    white-space: nowrap;
     border: 1px solid vars.$color-icon-bg;
     border-radius: 999px;
     padding: 0.2rem 0.6rem;
-    background: #fff;
     color: vars.$color-title;
     cursor: pointer;
     transition: background-color 0.2s ease;
