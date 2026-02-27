@@ -250,18 +250,18 @@ export default {
     margin: 1rem 0;
     font-family: var(--second-family);
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 1.25;
     letter-spacing: -0.02em;
     color: vars.$color-title;
 
     @media (min-width: 768px) {
       align-self: flex-start;
-      font-size: 1.7rem;
+      font-size: 1.5rem;
     }
 
     @media (min-width: 1200px) {
-      font-size: 2rem;
+      font-size: 1.7rem;
     }
   }
 

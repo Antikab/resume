@@ -18,48 +18,117 @@ import IconPostgresql from '@/assets/icons/IconPostgresql.svg'
 
 const toolsSkills = [
   {
-    group: 'Frontend Engineering',
-    description: 'Компонентная архитектура, состояние, типизация, сложные UI-сценарии.',
+    group: 'Frontend',
+    description: 'Интерфейсы, компоненты, состояние, типизация.',
     items: [
-      { value: 'TypeScript', label: 'Типизация, API-контракты, refactor-safe', icon: IconTs },
-      { value: 'Vue 3', label: 'Composition API, архитектура компонентов', icon: IconVue },
-      { value: 'React', label: 'Hooks, композиция, переиспользование', icon: IconReact },
-      { value: 'JavaScript', label: 'Асинхронность, события, runtime-поведение', icon: IconJs },
-      { value: 'HTML/CSS', label: 'Семантика, доступность, layout', icon: IconHtml }
+      {
+        value: 'TypeScript',
+        label: 'Типизация, контракты API, безопасный рефакторинг',
+        icon: IconTs
+      },
+      {
+        value: 'Vue 3',
+        label: 'Компоненты, Composition API, управление состоянием',
+        icon: IconVue
+      },
+      {
+        value: 'React',
+        label: 'Компоненты, hooks, переиспользование',
+        icon: IconReact
+      },
+      {
+        value: 'JavaScript',
+        label: 'Асинхронность, события, работа в браузере',
+        icon: IconJs
+      },
+      {
+        value: 'HTML',
+        label: 'Семантика, адаптивная разметка',
+        icon: IconHtml
+      }
     ]
   },
   {
-    group: 'Data & Integrations',
-    description: 'Интеграции с backend, геоданные, производительность запросов, надежность данных.',
+    group: 'Backend & Data',
+    description: 'API, базы данных, обработка и интеграция данных.',
     items: [
-      { value: 'Node.js', label: 'Интеграционные сервисы / утилиты', icon: IconNode },
-      { value: 'Express', label: 'API-слой, middleware, error handling', icon: IconExpress },
-      { value: 'PostgreSQL', label: 'Агрегации, индексы, оптимизация', icon: IconPostgresql },
-      { value: 'PostGIS', label: 'Spatial-операции и расчёты геометрии', icon: IconPostgresql },
-      { value: 'Prisma', label: 'Типобезопасный доступ к данным', icon: IconPrisma }
+      {
+        value: 'Node.js',
+        label: 'Сервисы и серверная логика',
+        icon: IconNode
+      },
+      {
+        value: 'Express',
+        label: 'REST API, middleware, обработка ошибок',
+        icon: IconExpress
+      },
+      {
+        value: 'PostgreSQL',
+        label: 'Запросы, агрегации, индексы, оптимизация',
+        icon: IconPostgresql
+      },
+      {
+        value: 'PostGIS',
+        label: 'Пространственные запросы и расчёты геометрии',
+        icon: IconPostgresql
+      },
+      {
+        value: 'Prisma',
+        label: 'Типобезопасная работа с базой данных',
+        icon: IconPrisma
+      }
     ]
   },
   {
-    group: 'Delivery & Product Infrastructure',
-    description: 'Поставка фич, качество, контроль изменений, поддерживаемость кодовой базы.',
+    group: 'Инструменты разработки',
+    description: 'Сборка проекта, контроль изменений, проверка API.',
     items: [
-      { value: 'Next.js', label: 'SSR/SSG, routing, app architecture', icon: IconNext },
-      { value: 'Nuxt', label: 'SSR/SSG, routing, app architecture', icon: IconNuxt },
-      { value: 'Git (GitHub)', label: 'Code review, ветвление, релизы', icon: IconGitHub },
-      { value: 'API tooling', label: 'Контракт, отладка, тестирование', icon: IconPostman },
+      {
+        value: 'Next.js',
+        label: 'SSR/SSG, routing, структура приложения',
+        icon: IconNext
+      },
+      {
+        value: 'Nuxt',
+        label: 'SSR/SSG, routing, структура приложения',
+        icon: IconNuxt
+      },
+      {
+        value: 'Git (GitHub)',
+        label: 'Ветки, code review, релизы',
+        icon: IconGitHub
+      },
+      {
+        value: 'Postman',
+        label: 'Проверка и отладка API',
+        icon: IconPostman
+      },
       {
         value: 'TailwindCSS',
-        label: 'Design tokens, scale, скорость разработки',
+        label: 'Быстрая сборка интерфейсов',
         icon: IconTailwind
       },
-      { value: 'CSS architecture', label: 'Структура стилей (BEM / utility)', icon: IconCss }
+      {
+        value: 'CSS',
+        label: 'Подходы к организации стилей (BEM / utility)',
+        icon: IconCss
+      }
     ]
   },
   {
-    group: 'Design Tools',
+    group: 'Design',
+    description: 'Работа с макетами и графикой.',
     items: [
-      { value: 'Figma', label: 'UI спеки, компоненты, handoff', icon: IconFigma },
-      { value: 'Photoshop', label: 'Базовая графика', icon: IconPhotoshop }
+      {
+        value: 'Figma',
+        label: 'Спеки, компоненты, передача макетов в разработку',
+        icon: IconFigma
+      },
+      {
+        value: 'Photoshop',
+        label: 'Базовая графика',
+        icon: IconPhotoshop
+      }
     ]
   }
 ]
