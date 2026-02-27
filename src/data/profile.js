@@ -1,9 +1,8 @@
 const profile = {
   name: 'Арсений Просветов',
-  about: `Frontend Developer (Vue 3, TypeScript) с опытом Fullstack-разработки.
-Разрабатываю аналитические интерфейсы и интегрирую их с API и PostgreSQL/PostGIS.
-Закрываю задачи от UI до серверной логики и SQL.
-Отвечаю за структуру фронтенда, производительность и поддержку.`
+  about: `Frontend Developer (Vue 3, TypeScript) с опытом Node.js и PostgreSQL/PostGIS.
+Разрабатываю аналитические интерфейсы и API для работы с пространственными данными.
+Фокус — производительность, структура проекта и обработка больших данных.`
 }
 
 export { profile }

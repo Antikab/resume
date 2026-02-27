@@ -3,7 +3,7 @@ import IconEng from '@/assets/icons/IconEng.svg'
 
 const languages = [
   { label: 'Родной', value: 'Русский', icon: IconRus },
-  { label: 'Reading technical documentation', value: 'Английский', icon: IconEng }
+  { label: 'Technical reading, basic spoken communication', value: 'Английский', icon: IconEng }
 ]
 
 export { languages }
