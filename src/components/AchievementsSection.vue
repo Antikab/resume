@@ -294,6 +294,7 @@ export default {
   }
 
   &__wrapper {
+    width: 100%;
     display: flex;
     flex-direction: column;
   }
@@ -477,6 +478,7 @@ export default {
 
   &__toggle {
     @extend %text-sm;
+    width: 4.1rem;
     white-space: nowrap;
     border: 1px solid vars.$color-icon-bg;
     border-radius: 999px;

@@ -179,6 +179,7 @@ export default {
     align-items: center;
     gap: 0.5rem;
     width: 100%;
+    text-align: center;
   }
 
   &__logo-icon-wrapper,

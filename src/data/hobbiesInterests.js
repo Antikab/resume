@@ -18,11 +18,6 @@ const hobbiesInterests = [
     label: 'Бег',
     icon: IconRun,
     color: '#0d9b33'
-  },
-  {
-    label: 'Видеоблогинг',
-    icon: IconBlogger,
-    color: '#d51e1e'
   }
 ]
 
