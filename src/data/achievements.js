@@ -27,7 +27,7 @@ const achievements = [
         bulletsTitle: 'Что сделал',
         bullets: [
           'Собрал сценарий «карта → расчёты → таблицы → экспорт».',
-          'Реализовал карту на Vue 3 + OpenLayers (WMS GeoServer, GeoJSON, стили, выбор, hover).',
+          'Реализовал карту на Vue 3 + OpenLayers: слои из GeoServer (WMS/WFS), GeoJSON, стили, выбор, hover',
           'Добавил рисование полигонов/окружностей и импорт/экспорт GeoJSON.',
           'Интегрировал OpenRouteService (изохроны, маршруты).',
           'Написал API на Express + TypeScript для расчётов через PostgreSQL/PostGIS.',
