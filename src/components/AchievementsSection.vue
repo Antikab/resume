@@ -6,8 +6,7 @@ export default {
   data() {
     return {
       expandedDescriptions: {},
-      defaultExpandedTitle:
-        'Проект: glavapu-stat — data-driven аналитика территорий (районы и пользовательские контуры)'
+      defaultExpandedTitle: 'Проект: glavapu-stat — аналитика территорий'
     }
   },
   components: {

@@ -1,7 +1,6 @@
 import IconProgramming from '@/assets/icons/IconProgramming.svg'
 import IconFitness from '@/assets/icons/IconFitness.svg'
 import IconRun from '@/assets/icons/IconRun.svg'
-import IconBlogger from '@/assets/icons/IconBlogger.svg'
 
 const hobbiesInterests = [
   {

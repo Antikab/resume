@@ -28,7 +28,7 @@ export default {
       required: true
     },
     hobbiesInterests: {
-      type: Object,
+      type: Array,
       required: true
     }
   }
