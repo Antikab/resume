@@ -1,10 +1,9 @@
 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <polygon points="10,10 90,20 80,80 20,90" stroke="#007BFF" stroke-width="2" fill="none"/>
+    <polygon points="10,10 90,20 80,80 20,90" stroke="#007BFF" stroke-width="2"  fill="none"/>
     <defs>
         <pattern id="diagonalHatch" patternUnits="userSpaceOnUse" width="6" height="6">
             <path d="M-1,1 l2,-2 M0,6 l6,-6 M5,7 l2,-2" stroke="#007BFF" stroke-width="0.5"/>
         </pattern>
     </defs>
-    <polygon points="20,20 80,30 70,70 30,80" fill="url(#diagonalHatch)" stroke="#0056b3" stroke-width="2"/>
-    <line x1="15" y1="85" x2="85" y2="15" stroke="#28a745" stroke-width="2" stroke-dasharray="4"/>
+    <polygon points="20,20 80,30 70,70 30,80" fill="url(#diagonalHatch)" stroke="#28a745" stroke-dasharray="4" stroke-width="2"/>
 </svg>

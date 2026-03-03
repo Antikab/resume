@@ -2,6 +2,7 @@ import IconLink from '@/assets/icons/IconLink.svg'
 import IconArchTown from '@/assets/icons/IconArchTown.svg'
 import IconBrixForm from '@/assets/icons/IconBrixForm.svg'
 import IconWeatherWidget from '@/assets//icons/IconWeatherWidget.svg'
+import IconGeostyles from '@/assets/icons/IconGeostyles.svg'
 
 const latestProjects = [
   {
@@ -17,6 +18,29 @@ const latestProjects = [
       {
         text: 'Live',
         url: 'https://archtown.org'
+      }
+    ],
+    iconLink: IconLink
+  },
+  {
+    jobTitle: 'GeoServer Styles',
+    label: `Интерфейс библиотеки стилей GeoServer.
+
+Сделал поиск, фильтры и пагинацию, добавил отображение логов обновлений.
+Поднял серверную часть на Prisma и подключил хранение файлов в Supabase.
+
+Результат: процесс управления стилями стал предсказуемым и быстрее в ежедневной работе.
+
+Стек: Next.js, React, Prisma, Supabase, TailwindCSS.`,
+    icon: IconGeostyles,
+    links: [
+      {
+        text: 'Live demo',
+        url: 'https://geostyle-dun.vercel.app/'
+      },
+      {
+        text: 'Repository',
+        url: 'https://github.com/Antikab/geostyle'
       }
     ],
     iconLink: IconLink
