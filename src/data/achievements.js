@@ -134,7 +134,7 @@ const achievements = [
   },
 
   {
-    date: 'Май 2024 — Ноябрь 2024',
+    date: 'Март 2023 — Сентябрь 2023',
     iconLocation: IconAddress,
     location: 'Лондон',
     iconCompany: IconArchTown,
