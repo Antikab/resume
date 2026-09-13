@@ -152,6 +152,9 @@ export default {
   &__wrapper {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    padding-bottom: 3rem;
   }
 
   &__title {
@@ -172,7 +175,7 @@ export default {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 0.5rem;
-    margin: 2rem 0 3rem 0;
+    margin: 2rem 0 0;
 
     border-radius: 8px;
     overflow: hidden;
@@ -182,11 +185,10 @@ export default {
     display: flex;
     width: 100%;
     flex-direction: column;
-    justify-content: space-between;
     padding: 1rem 1.5rem;
-    gap: 0.5rem;
+    gap: 0.75rem;
     background: vars.$color-card-bg;
-    box-shadow: inset 0px -10px 20px 0px rgba(0, 0, 0, 0.03);
+    box-shadow: inset 0 -10px 20px 0 rgba(0, 0, 0, 0.03);
 
     @media (min-width: 550px) {
       flex: 1 1 calc(50% - 1.25rem);
@@ -208,12 +210,20 @@ export default {
 
   &__logo-wrapper {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 1rem;
 
     @media (min-width: 1200px) {
-      align-items: start;
+      min-height: 7.5rem;
     }
+  }
+
+  &__institution,
+  &__degree,
+  &__details-text {
+    hyphens: none;
+    word-break: normal;
+    overflow-wrap: normal;
   }
 
   &__logo-icon-wrapper {
@@ -283,6 +293,10 @@ export default {
   &__degree {
     @extend %text;
     color: vars.$color-title;
+
+    @media (min-width: 1200px) {
+      min-height: 4rem;
+    }
 
     @media (min-width: 1440px) {
       font-size: 1rem;

@@ -179,7 +179,8 @@ export default {
   &__wrapper {
     display: flex;
     flex-direction: column;
-    // background-color: rgb(158, 154, 162);
+    width: 100%;
+    padding-bottom: 3rem;
   }
 
   &__title {
@@ -200,7 +201,7 @@ export default {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 0.75rem;
-    margin: 2rem 0 3rem 0;
+    margin: 2rem 0 0;
 
     border-radius: 8px;
     overflow: hidden;

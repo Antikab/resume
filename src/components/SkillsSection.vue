@@ -41,7 +41,6 @@ export default {
 .tools-skills {
   display: flex;
   gap: 2rem;
-  padding-bottom: 3rem;
 
   @media (max-width: 768px) {
     gap: 1rem;
@@ -94,6 +93,7 @@ export default {
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding-bottom: 3rem;
   }
 
   &__title {
