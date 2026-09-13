@@ -2,11 +2,10 @@
 import { Collapse } from 'vue-collapsed'
 
 export default {
-  name: 'AchievementsSection',
+  name: 'ExperienceSection',
   data() {
     return {
-      expandedDescriptions: {},
-      defaultExpandedTitle: 'Проект: glavapu-stat — аналитика территорий'
+      expandedDescriptions: {}
     }
   },
   components: {
@@ -17,28 +16,14 @@ export default {
     achievements: Array
   },
   methods: {
-    isExpanded(achievementIndex, descIndex) {
-      const key = `${achievementIndex}-${descIndex}`
-      const expandedValue = this.expandedDescriptions[key]
-
-      if (typeof expandedValue === 'boolean') {
-        return expandedValue
-      }
-
-      const description = this.achievements?.[achievementIndex]?.descriptions?.[descIndex]
-      return description?.descriptionTitle === this.defaultExpandedTitle
+    isExpanded(description) {
+      return this.expandedDescriptions[description.id] ?? description.defaultExpanded === true
     },
-    toggleDescription(achievementIndex, descIndex) {
-      const key = `${achievementIndex}-${descIndex}`
-      const nextValue = !this.isExpanded(achievementIndex, descIndex)
-
-      this.expandedDescriptions = {
-        ...this.expandedDescriptions,
-        [key]: nextValue
-      }
+    toggleDescription(description) {
+      this.expandedDescriptions[description.id] = !this.isExpanded(description)
     },
-    getDescriptionId(achievementIndex, descIndex) {
-      return `achievement-description-${achievementIndex}-${descIndex}`
+    getDescriptionId(description) {
+      return `project-description-${description.id}`
     },
     getLeadSource(d) {
       return (d.descriptionLead || d.descriptionJob || '').trim()
@@ -60,14 +45,10 @@ export default {
       <h2 class="achievements__title">{{ mainTitle.titleAchievements }}</h2>
 
       <div class="achievements__card-wrapper">
-        <div
-          v-for="(achievement, achievementIndex) in achievements"
-          :key="achievementIndex"
-          class="achievements__card"
-        >
+        <div v-for="achievement in achievements" :key="achievement.id" class="achievements__card">
           <div class="achievements__experience">
             <div class="achievements__date-place">
-              <span v-if="achievementIndex === 0" class="achievements__date-text">
+              <span v-if="achievement.datePresent" class="achievements__date-text">
                 {{ achievement.date }} -
                 <span class="achievements__date-text--highlight">
                   {{ achievement.datePresent }}
@@ -88,7 +69,7 @@ export default {
             </div>
 
             <div class="achievements__company-wrapper">
-              <div class="achievements__company-icon-wrapper">
+              <div v-if="achievement.iconCompany" class="achievements__company-icon-wrapper">
                 <inline-svg
                   class="achievements__company-icon"
                   :src="achievement.iconCompany"
@@ -104,10 +85,18 @@ export default {
             </div>
           </div>
 
-          <div class="achievements__description-wrapper">
+          <p class="achievements__summary">{{ achievement.summary }}</p>
+          <p v-if="achievement.careerNote" class="achievements__summary">
+            {{ achievement.careerNote }}
+          </p>
+          <p v-if="achievement.projectsNote" class="achievements__summary">
+            {{ achievement.projectsNote }}
+          </p>
+
+          <div v-if="achievement.descriptions.length" class="achievements__description-wrapper">
             <div
-              v-for="(description, descIndex) in achievement.descriptions"
-              :key="descIndex"
+              v-for="description in achievement.descriptions"
+              :key="description.id"
               class="achievements__description"
             >
               <div class="achievements__description-header">
@@ -123,22 +112,20 @@ export default {
                   "
                   type="button"
                   class="achievements__toggle"
-                  :aria-expanded="isExpanded(achievementIndex, descIndex)"
-                  :aria-controls="getDescriptionId(achievementIndex, descIndex)"
-                  @click="toggleDescription(achievementIndex, descIndex)"
+                  :aria-expanded="isExpanded(description)"
+                  :aria-controls="getDescriptionId(description)"
+                  :aria-label="`${isExpanded(description) ? 'Скрыть' : 'Показать'} подробности: ${description.descriptionTitle}`"
+                  @click="toggleDescription(description)"
                 >
-                  {{ isExpanded(achievementIndex, descIndex) ? 'Скрыть' : 'Показать' }}
+                  {{ isExpanded(description) ? 'Скрыть' : 'Показать' }}
                 </button>
               </div>
               <p v-if="getLeadSource(description)" class="achievements__lead">
                 {{ getLeadSource(description) }}
               </p>
 
-              <Collapse :when="isExpanded(achievementIndex, descIndex)">
-                <div
-                  :id="getDescriptionId(achievementIndex, descIndex)"
-                  class="achievements__collapsible-content"
-                >
+              <Collapse :when="isExpanded(description)">
+                <div :id="getDescriptionId(description)" class="achievements__collapsible-content">
                   <div v-if="description.bullets?.length" class="achievements__block">
                     <div class="achievements__block-title">
                       {{ description.bulletsTitle || 'Ключевые задачи' }}
@@ -150,7 +137,7 @@ export default {
                         :key="i"
                         class="achievements__list-item"
                       >
-                        <span v-html="item" />
+                        <span>{{ item }}</span>
                       </li>
                     </ul>
                   </div>
@@ -166,7 +153,7 @@ export default {
                         :key="i"
                         class="achievements__list-item"
                       >
-                        <span v-html="item" />
+                        <span>{{ item }}</span>
                       </li>
                     </ul>
                   </div>
@@ -457,6 +444,12 @@ export default {
     }
   }
 
+  &__summary {
+    color: vars.$color-text;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
   &__description {
     display: flex;
     flex-direction: column;
@@ -484,6 +477,8 @@ export default {
     padding: 0.2rem 0.6rem;
     color: vars.$color-title;
     cursor: pointer;
+    min-height: 2rem;
+    flex-shrink: 0;
     transition: background-color 0.2s ease;
 
     &:hover {
@@ -496,6 +491,8 @@ export default {
     margin-bottom: 0.1rem;
     font-weight: 700;
     color: vars.$color-title;
+    font-size: 0.95rem;
+    line-height: 1.4;
 
     @media (min-width: 1440px) {
       font-size: 0.9rem;
@@ -504,7 +501,8 @@ export default {
 
   &__lead {
     @extend %text-m;
-    color: vars.$color-label;
+    color: vars.$color-text;
+    font-size: 0.875rem;
     line-height: 1.55;
     white-space: pre-line;
   }

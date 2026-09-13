@@ -1,61 +1,28 @@
-<script>
-import { profile } from '@/data/profile'
-import { socials } from '@/data/socials'
-import { contacts } from '@/data/contacts'
-import { mainTitle } from '@/data/mainTitle'
-import { education } from '@/data/education'
-import { languages } from '@/data/languages'
-import { asideTitle } from '@/data/asideTitle'
-import { toolsSkills } from '@/data/toolsSkills'
-import { achievements } from '@/data/achievements'
-import { latestProjects } from '@/data/latestProjects'
-import { hobbiesInterests } from '@/data/hobbiesInterests'
-
-import MainLayout from '@/layouts/MainLayout.vue'
-import EducationSection from '@/components/EducationSection.vue'
-import ToolsSkillsSection from '@/components/ToolsSkillsSection.vue'
-import AchievementsSection from '@/components/AchievementsSection.vue'
-import LatestProjectsSection from '@/components/LatestProjectsSection.vue'
-
-export default {
-  name: 'App',
-  components: {
-    MainLayout,
-    EducationSection,
-    ToolsSkillsSection,
-    AchievementsSection,
-    LatestProjectsSection
-  },
-  data() {
-    return {
-      profile,
-      socials,
-      contacts,
-      mainTitle,
-      education,
-      languages,
-      asideTitle,
-      toolsSkills,
-      achievements,
-      latestProjects,
-      hobbiesInterests
-    }
-  }
-}
+<script setup>
+import { resumeView } from './presentation/resumeView.js'
+import { mainTitle } from './config/mainTitle.js'
+import { asideTitle } from './config/asideTitle.js'
+import MainLayout from './layouts/MainLayout.vue'
+import ResumeIntro from './components/ResumeIntro.vue'
+import ExperienceSection from './components/ExperienceSection.vue'
+import SkillsSection from './components/SkillsSection.vue'
+import ProjectsSection from './components/ProjectsSection.vue'
+import EducationSection from './components/EducationSection.vue'
 </script>
 
 <template>
   <MainLayout
-    :profile="profile"
-    :asideTitle="asideTitle"
-    :contacts="contacts"
-    :socials="socials"
-    :languages="languages"
-    :hobbiesInterests="hobbiesInterests"
+    :profile="resumeView.profile"
+    :aside-title="asideTitle"
+    :contacts="resumeView.contacts"
+    :socials="resumeView.socials"
+    :languages="resumeView.languages"
+    :hobbies-interests="resumeView.interests"
   >
-    <EducationSection :mainTitle="mainTitle" :education="education" />
-    <AchievementsSection :mainTitle="mainTitle" :achievements="achievements" />
-    <ToolsSkillsSection :mainTitle="mainTitle" :toolsSkills="toolsSkills" />
-    <LatestProjectsSection :mainTitle="mainTitle" :latestProjects="latestProjects" />
+    <ResumeIntro :profile="resumeView.profile" />
+    <ExperienceSection :main-title="mainTitle" :achievements="resumeView.experience" />
+    <SkillsSection :main-title="mainTitle" :tools-skills="resumeView.skills" />
+    <ProjectsSection :main-title="mainTitle" :latest-projects="resumeView.publicProjects" />
+    <EducationSection :main-title="mainTitle" :education="resumeView.education" />
   </MainLayout>
 </template>

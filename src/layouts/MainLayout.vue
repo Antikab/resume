@@ -1,10 +1,10 @@
 <script>
-import InfoAsideSection from '@/components/InfoAsideSection.vue'
+import ProfileAside from '@/components/ProfileAside.vue'
 
 export default {
   name: 'MainLayout',
   components: {
-    InfoAsideSection
+    ProfileAside
   },
   props: {
     profile: {
@@ -37,7 +37,7 @@ export default {
 
 <template>
   <div class="portfolio">
-    <InfoAsideSection
+    <ProfileAside
       class="portfolio__aside"
       :profile="profile"
       :asideTitle="asideTitle"
@@ -84,6 +84,7 @@ export default {
 
   &__main {
     flex: 1;
+    min-width: 0;
     padding: 4rem 3rem 0;
     background-color: #ffffff;
 

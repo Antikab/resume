@@ -1,11 +1,6 @@
-import IconLink from '@/assets/icons/IconLink.svg'
-import IconArchTown from '@/assets/icons/IconArchTown.svg'
-import IconBrixForm from '@/assets/icons/IconBrixForm.svg'
-import IconWeatherWidget from '@/assets//icons/IconWeatherWidget.svg'
-import IconGeostyles from '@/assets/icons/IconGeostyles.svg'
-
-const latestProjects = [
+const publicProjects = [
   {
+    id: 'archtown-platform',
     jobTitle: 'ArchTown Platform',
     label: `Контентная платформа с постами, видео, комментариями и подписками.
 
@@ -13,16 +8,15 @@ const latestProjects = [
 Оптимизировал публикацию, поиск и навигацию.
 
 Стек: Nuxt 3, Vue 3, Pinia, TailwindCSS, Strapi.`,
-    icon: IconArchTown,
     links: [
       {
         text: 'Live',
         url: 'https://archtown.org'
       }
-    ],
-    iconLink: IconLink
+    ]
   },
   {
+    id: 'geostyles',
     jobTitle: 'GeoServer Styles',
     label: `Интерфейс библиотеки стилей GeoServer.
 
@@ -32,7 +26,6 @@ const latestProjects = [
 Результат: процесс управления стилями стал предсказуемым и быстрее в ежедневной работе.
 
 Стек: Next.js, React, Prisma, Supabase, TailwindCSS.`,
-    icon: IconGeostyles,
     links: [
       {
         text: 'Live demo',
@@ -42,15 +35,14 @@ const latestProjects = [
         text: 'Repository',
         url: 'https://github.com/Antikab/geostyle'
       }
-    ],
-    iconLink: IconLink
+    ]
   },
   {
+    id: 'brix-form',
     jobTitle: 'Brix Form',
     label: `Многошаговая форма для сбора данных и предварительной оценки проекта. Валидация на каждом шаге и сохранение прогресса в браузере.
 
       Стек: Vue 3, TailwindCSS.`,
-    icon: IconBrixForm,
     links: [
       {
         text: 'Live demo',
@@ -60,15 +52,14 @@ const latestProjects = [
         text: 'Repository',
         url: 'https://github.com/Antikab/brix-form'
       }
-    ],
-    iconLink: IconLink
+    ]
   },
   {
+    id: 'weather',
     jobTitle: 'Weather widget',
     label: `Минималистичный погодный виджет на Vue 3 с динамическим фоном и автоопределением локации.
 
       Стек: Vue 3, TailwindCSS, OpenWeatherMap API, Pexels API.`,
-    icon: IconWeatherWidget,
     links: [
       {
         text: 'Live demo',
@@ -78,9 +69,8 @@ const latestProjects = [
         text: 'Repository',
         url: 'https://github.com/Antikab/weather'
       }
-    ],
-    iconLink: IconLink
+    ]
   }
 ]
 
-export { latestProjects }
+export { publicProjects }

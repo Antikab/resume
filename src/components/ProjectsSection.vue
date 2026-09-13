@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'ToolsSkillsSection',
+  name: 'ProjectsSection',
   props: {
     mainTitle: {
       type: Object,

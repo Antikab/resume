@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'InfoAsideSection',
+  name: 'ProfileAside',
   props: {
     profile: {
       type: Object,
@@ -28,16 +28,6 @@ export default {
     }
   },
   computed: {
-    getHref() {
-      return (item) => {
-        let value = item.value
-
-        if (item.type === 'phone') {
-          value = value.replace(/[^\d+]/g, '')
-        }
-        return item.hrefPrefix ? item.hrefPrefix + value : value
-      }
-    },
     formatLink() {
       return (url) => {
         return url.replace(/^https?:\/\//, '')
@@ -56,13 +46,16 @@ export default {
         :alt="`Фото ${profile.name}`"
       />
       <h1 class="info-aside__profile-name">{{ profile.name }}</h1>
+      <p class="info-aside__profile-role">{{ profile.title }}</p>
+      <p class="info-aside__profile-stack">{{ profile.specialization }}</p>
+      <p class="info-aside__current-role">{{ profile.currentRole }}</p>
       <p class="info-aside__profile-about">{{ profile.about }}</p>
     </div>
     <div class="info-aside__divider"></div>
 
     <h3 class="info-aside__contacts-label">{{ asideTitle.titleContacts }}</h3>
     <div class="info-aside__contacts">
-      <div v-for="(contact, index) in contacts" :key="index" class="info-aside__contacts-item">
+      <div v-for="contact in contacts" :key="contact.id" class="info-aside__contacts-item">
         <div class="info-aside__contacts-icon-wrapper">
           <inline-svg
             class="info-aside__contacts-icon"
@@ -75,14 +68,16 @@ export default {
         <div class="info-aside__contacts-details">
           <span class="info-aside__contacts-label">{{ contact.label }}</span>
           <a
+            v-if="contact.href"
             class="info-aside__contacts-link"
             target="_blank"
             rel="noopener noreferrer"
-            :href="getHref(contact)"
+            :href="contact.href"
             :aria-label="`Перейти к ${contact.label}: ${contact.value}`"
           >
             {{ formatLink(contact.value) }}
           </a>
+          <span v-else class="info-aside__contacts-link">{{ contact.value }}</span>
         </div>
       </div>
     </div>
@@ -91,7 +86,7 @@ export default {
 
     <h3 class="info-aside__socials-label">{{ asideTitle.titleSocials }}</h3>
     <div class="info-aside__socials">
-      <div v-for="(social, index) in socials" :key="index" class="info-aside__socials-item">
+      <div v-for="social in socials" :key="social.id" class="info-aside__socials-item">
         <div class="info-aside__socials-icon-wrapper">
           <inline-svg
             class="info-aside__socials-icon"
@@ -106,7 +101,7 @@ export default {
             class="info-aside__socials-link"
             target="_blank"
             rel="noopener noreferrer"
-            :href="getHref(social)"
+            :href="social.value"
             :aria-label="`Открыть профиль в ${social.label}`"
             >{{ formatLink(social.value) }}</a
           >
@@ -119,9 +114,9 @@ export default {
     <h3 class="info-aside__languages-label">{{ asideTitle.titleLangs }}</h3>
     <div class="info-aside__languages">
       <div
-        v-for="(lang, index) in languages"
+        v-for="lang in languages"
         class="info-aside__languages-item"
-        :key="index"
+        :key="lang.id"
         :aria-label="`Владение языком: ${lang.value}, уровень ${lang.label}`"
       >
         <div class="info-aside__languages-icon-wrapper">
@@ -144,10 +139,10 @@ export default {
     <h3 class="info-aside__hobbiesInterests-label">{{ asideTitle.titleHobbies }}</h3>
     <div class="info-aside__hobbiesInterests">
       <div
-        v-for="(hobby, index) in hobbiesInterests"
+        v-for="hobby in hobbiesInterests"
         class="info-aside__hobbiesInterests-item"
         :style="{ color: hobby.color }"
-        :key="index"
+        :key="hobby.id"
         :aria-label="`Увлечение: ${hobby.label}`"
       >
         <div class="info-aside__hobbiesInterests-icon-wrapper">
@@ -267,8 +262,7 @@ export default {
 
   &__profile-about {
     margin-bottom: 0.625rem;
-    margin-right: -0.507rem;
-    text-align: justify;
+    text-align: left;
     font-family: var(--second-family);
     font-weight: 500;
     font-size: 1rem;
@@ -277,14 +271,29 @@ export default {
     color: vars.$color-text;
 
     @media (min-width: 768px) {
-      margin-right: -2.3rem;
       font-size: 1.05rem;
     }
 
     @media (min-width: 1200px) {
-      margin-right: -1.6rem;
       font-size: 1rem;
     }
+  }
+
+  &__profile-role {
+    color: vars.$color-title;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  &__current-role {
+    color: vars.$color-text;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  &__profile-stack {
+    color: vars.$color-point;
+    margin: 0.3rem 0 1rem;
   }
 
   &__divider {

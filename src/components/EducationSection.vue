@@ -26,7 +26,7 @@ export default {
     <div class="education__wrapper">
       <h2 class="education__title">{{ mainTitle.titleEducation }}</h2>
       <div class="education__card-wrapper">
-        <div v-for="(item, index) in education" class="education__card" :key="index">
+        <div v-for="item in education" class="education__card" :key="item.id">
           <div class="education__logo-wrapper">
             <div class="education__logo-icon-wrapper">
               <inline-svg
@@ -40,11 +40,18 @@ export default {
           </div>
 
           <div class="education__details">
-            <a :href="item.link" target="_blank" rel="noopener noreferrer" class="education__link">
+            <p class="education__degree">{{ item.degree }}</p>
+            <a
+              :href="item.diploma"
+              :aria-label="`Открыть диплом: ${item.institution} — ${item.degree} (PDF)`"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="education__link"
+            >
               <div class="education__link-icon-wrapper">
                 <inline-svg class="education__link-icon" :src="item.iconLink" role="presentation" />
               </div>
-              <p class="education__degree">{{ item.degree }}</p>
+              <span>Открыть диплом · PDF</span>
             </a>
             <p class="education__years">{{ item.years }}</p>
             <p class="education__details-text">{{ item.details }}</p>
