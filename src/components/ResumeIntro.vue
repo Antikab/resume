@@ -64,19 +64,55 @@ defineProps({ profile: { type: Object, required: true } })
     margin-top: 1.5rem;
 
     a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.75rem;
       color: vars.$color-point;
       font-size: 0.85rem;
       padding: 0.65rem 0;
       text-decoration: underline;
       text-underline-offset: 3px;
+      transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        transform 0.2s ease;
+
+      &:hover {
+        text-decoration-thickness: 2px;
+      }
     }
 
     .resume-intro__primary {
       padding: 0.7rem 1rem;
       border-radius: 8px;
-      color: white;
+      color: #fff;
       background: vars.$color-point;
       text-decoration: none;
+
+      &:hover {
+        filter: brightness(0.92);
+      }
+
+      &:active {
+        transform: translateY(1px);
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__actions {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.25rem;
+
+      a {
+        min-height: 2.75rem;
+      }
+    }
+
+    &__primary {
+      width: 100%;
+      justify-content: center;
     }
   }
 
