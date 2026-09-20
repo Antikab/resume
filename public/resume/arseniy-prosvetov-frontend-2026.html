@@ -157,7 +157,7 @@ a:focus-visible {
 <p class="contact">arsprosvet@mail.ru | +7 (901) 421-8074 | Россия, Москва</p>
 <p class="contact">https://github.com/Antikab | https://t.me/ProArS</p>
 <h2 class="section">Профессиональный профиль</h2>
-<p class="paragraph">Frontend-разработчик с 3+ годами коммерческого опыта, ведущий программист в Институте Генплана Москвы. Основной стек - Vue 3, TypeScript и Nuxt 3. Проектирую компоненты, состояние и API-контракты; оптимизирую работу с данными. Веду задачи от интерфейса до Node.js API, PostgreSQL/PostGIS, тестов и CI/CD. Предметная экспертиза - геоаналитика и градостроительные данные.</p>
+<p class="paragraph">Frontend-разработчик с 3+ годами коммерческого опыта. Основной стек - Vue 3 и TypeScript; есть коммерческий опыт Nuxt 3. Разрабатываю аналитические интерфейсы, интерактивные карты и приложения для пространственных данных. В отдельных задачах работаю с Node.js API и PostgreSQL/PostGIS. Ведущий программист в Институте Генплана Москвы.</p>
 <h2 class="section">Ключевые навыки</h2>
 <p class="skill">Frontend: Vue.js 3, Composition API, TypeScript, JavaScript (ES6+), Nuxt 3, Pinia, Vue Router, HTML5, CSS3 / SCSS, Tailwind CSS</p>
 <p class="skill">Архитектура и интеграции: SPA, REST API, DTO / domain / view models, Zod, AbortController, WebSocket / Socket.IO</p>
@@ -177,7 +177,7 @@ a:focus-visible {
 <li class="bullet">Спроектировал frontend на Vue 3 и TypeScript: разделил UI, состояние, доменную логику, API-сервисы и управление картой MapLibre GL.</li>
 <li class="bullet">Реализовал три режима анализа: по выбранным объектам, районам и произвольному полигону; добавил импорт и экспорт GeoJSON.</li>
 <li class="bullet">Сократил объём загружаемых данных: запросы по видимой области карты (bbox), ограничения по масштабу, облегчённые DTO и отмена устаревших запросов через AbortController.</li>
-<li class="bullet">Разработал NestJS API с расчётами в PostGIS и Zod-валидацией. Новые слои подключаются через общий конфиг; расчёты и API-контракты проверяются тестами Vitest и Jest.</li>
+<li class="bullet">Разработал NestJS API с расчётами в PostGIS и Zod-валидацией; добавил тесты Vitest и Jest. Подключение слоёв организовано через типизированные конфигурации frontend и backend.</li>
 </ul>
 <p class="stack">Стек: Vue 3, TypeScript, MapLibre GL, NestJS, PostgreSQL/PostGIS, Zod, Vitest, Jest, GitHub Actions</p>
 </div>
@@ -195,29 +195,29 @@ a:focus-visible {
 <h4 class="project">ГлавАПУ Stat - аналитика территорий</h4>
 <p class="paragraph">Внутренний сервис, объединяющий выбор территории, пространственные расчёты, дашборды и Excel-отчёты.</p>
 <ul class="bullets">
-<li class="bullet">Разработал SPA на Vue 3, TypeScript и OpenLayers: выбор районов, рисование полигонов и окружностей, импорт и экспорт GeoJSON.</li>
+<li class="bullet">Разработал SPA на Vue 3, JavaScript и OpenLayers: выбор районов, рисование полигонов и окружностей, импорт и экспорт GeoJSON.</li>
 <li class="bullet">Подключил тематические WMS/WFS-слои GeoServer, маршруты и изохроны OpenRouteService, визуализацию показателей в ECharts.</li>
 <li class="bullet">Разработал Express API и пространственные агрегации в PostGIS; автоматизировал формирование Excel-отчётов по шаблонам через ExcelJS.</li>
 </ul>
-<p class="stack">Стек: Vue 3, TypeScript, Pinia, OpenLayers, ECharts, Express, PostgreSQL/PostGIS, GeoServer, ExcelJS</p>
+<p class="stack">Стек: Vue 3, JavaScript, Pinia, OpenLayers, ECharts, Express, PostgreSQL/PostGIS, GeoServer, ExcelJS</p>
 </div>
 <div class="project-block">
 <h4 class="project">VectorGIS Loader - ETL-сервис пространственных данных</h4>
 <p class="paragraph">Автоматическая публикация геослоёв: потоковая обработка GeoJSON объёмом более 8 ГБ и 3 млн объектов.</p>
 <ul class="bullets">
 <li class="bullet">Разработал React-интерфейс и Node.js backend: потоковая обработка без загрузки всего файла в память, проверка геометрий и хранение в MinIO.</li>
-<li class="bullet">Реализовал транзакционную загрузку через PostgreSQL COPY с откатом при ошибке. Несовместимые изменения схемы направляются во временную БД на ревью.</li>
+<li class="bullet">Реализовал транзакционный импорт батчами и перенос проверенных слоёв между БД через PostgreSQL COPY; несовместимые изменения схемы направляются во временную БД на ревью.</li>
 <li class="bullet">Добавил ночную очередь с восстановлением после перезапуска, realtime-мониторинг через Socket.IO и централизованный аудит операций.</li>
 </ul>
 <p class="stack">Стек: React, TypeScript, Node.js, Express, PostgreSQL/PostGIS, MinIO, Socket.IO</p>
 </div>
-<h3 class="job">ГБУ «ГлавАПУ» | Ведущий программист / Frontend Engineer (с 2024; ранее - архитектор)</h3>
+<h3 class="job">ГБУ «ГлавАПУ» | Frontend-разработчик / программист; ранее - архитектор</h3>
 <p class="meta">Октябрь 2019 - Март 2026 | Москва</p>
-<p class="paragraph">Официально работал в организации с октября 2019 года. До декабря 2023 - архитектор; с января 2024 перешёл в обработку данных Центра информационных технологий и начал официальную IT-карьеру. Разрабатывал аналитические веб-приложения на Vue 3 / TypeScript, Node.js API и пространственные расчёты в PostgreSQL/PostGIS.</p>
-<p class="paragraph">Официальный рост в IT: специалист 1 категории (01.01.2024) -&gt; ведущий специалист (01.11.2024) -&gt; ведущий программист (01.11.2025). 06.03.2026 переведён в Институт Генплана Москвы.</p>
-<h3 class="job">Arch Town Labs CIC | Frontend Developer</h3>
+<p class="paragraph">Работал в ГлавАПУ с октября 2019 года: до декабря 2023 - архитектор, с января 2024 - разработчик в Центре информационных технологий. Стек: Vue 3 / TypeScript, Node.js и PostgreSQL/PostGIS.</p>
+<p class="paragraph">Официальный рост в IT: специалист 1 категории (01.01.2024) -&gt; ведущий специалист (01.11.2024) -&gt; ведущий программист (01.11.2025). 06.03.2026 уволен в порядке перевода; 10.03.2026 принят в Институт Генплана Москвы.</p>
+<h3 class="job">Arch Town Labs CIC | Frontend Developer · коммерческий проект</h3>
 <p class="meta">Март 2023 - Сентябрь 2023 | Лондон</p>
-<p class="paragraph">Развитие контентной платформы с публикациями, видео, комментариями и подписками.</p>
+<p class="paragraph">Параллельный коммерческий проект во время основной работы архитектором: развитие контентной платформы с публикациями, видео, комментариями и подписками.</p>
 <div class="project-block">
 <h4 class="project">ArchTown Platform</h4>
 <p class="paragraph">Nuxt 3 / Vue 3: кроссбраузерность и ключевые пользовательские сценарии.</p>
