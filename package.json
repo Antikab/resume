@@ -1,0 +1,38 @@
+{
+  "name": "resume",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/export-resume.mjs --check-pdf && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --fix",
+    "format": "prettier --write src/ scripts/ tests/ index.html package.json",
+    "resume:export": "node scripts/export-resume.mjs",
+    "resume:pdf": "node scripts/build-pdf.mjs",
+    "lint:check": "eslint .",
+    "browser:install": "playwright install chromium",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "node scripts/check-browser.mjs",
+    "verify": "yarn lint:check && yarn test && yarn build",
+    "format:check": "prettier --check src/ scripts/ tests/ index.html package.json"
+  },
+  "dependencies": {
+    "vue": "^3.5.13",
+    "vue-collapsed": "^1.3.5",
+    "vue-inline-svg": "^3.1.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.14.0",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/eslint-config-prettier": "^10.1.0",
+    "eslint": "^9.14.0",
+    "eslint-plugin-vue": "^9.30.0",
+    "playwright": "1.62.1",
+    "prettier": "^3.3.3",
+    "sass": "^1.83.4",
+    "vite": "^6.0.5",
+    "vite-plugin-vue-devtools": "^7.6.8"
+  }
+}

@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #eef0f3;
+  color: #202936;
+  font:
+    11pt/1.45 Arial,
+    sans-serif;
+}
+main {
+  max-width: 210mm;
+  margin: 24px auto;
+  padding: 16mm;
+  background: white;
+}
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+h1 {
+  font-size: 24pt;
+  line-height: 1.15;
+}
+.role {
+  margin: 5px 0 10px;
+  font-size: 13pt;
+  font-weight: bold;
+}
+.contact {
+  font-size: 10pt;
+  overflow-wrap: anywhere;
+}
+h2 {
+  margin: 18px 0 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #b8c1cc;
+  font-size: 12pt;
+}
+h3 {
+  margin: 12px 0 3px;
+  font-size: 11.5pt;
+}
+h4 {
+  margin: 12px 0 5px;
+  font-size: 11pt;
+}
+.paragraph,
+.skill,
+.education,
+.line {
+  margin: 5px 0;
+}
+.bullet {
+  margin: 4px 0;
+}
+.meta,
+.stack {
+  font-size: 10pt;
+  color: #374151;
+}
+.stack {
+  margin-top: 6px;
+}
+.document-actions {
+  max-width: 210mm;
+  margin: 24px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 16px;
+}
+a {
+  color: #5531a7;
+}
+a:focus-visible {
+  outline: 2px solid #5531a7;
+  outline-offset: 4px;
+}
+@media (max-width: 600px) {
+  main {
+    padding: 24px;
+    margin: 16px 0 0;
+  }
+  h1 {
+    font-size: 21pt;
+  }
+}
+@page {
+  size: A4;
+  margin: 14mm 16mm;
+}
+@media print {
+  body {
+    background: white;
+    font-size: 10pt;
+    line-height: 1.25;
+  }
+  main {
+    padding: 0;
+    margin: 0;
+    max-width: none;
+  }
+  .document-actions {
+    display: none;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  .meta {
+    break-after: avoid;
+  }
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+  .bullet,
+  .stack,
+  .skill,
+  .education,
+  .project-block {
+    break-inside: avoid;
+  }
+  h2 {
+    margin: 12px 0 6px;
+  }
+  h3 {
+    margin: 10px 0 3px;
+  }
+  h4 {
+    margin: 10px 0 4px;
+  }
+}
+
+.bullets {
+  padding-left: 18px;
+  margin: 6px 0;
+}

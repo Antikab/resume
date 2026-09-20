@@ -1,0 +1,370 @@
+<script>
+export default {
+  name: 'ProfileAside',
+  props: {
+    profile: {
+      type: Object,
+      required: true
+    },
+    asideTitle: {
+      type: Object,
+      required: true
+    },
+    contacts: {
+      type: Array,
+      required: true
+    },
+    socials: {
+      type: Array,
+      required: true
+    }
+  },
+  computed: {
+    formatLink() {
+      return (url) => {
+        return url.replace(/^https?:\/\//, '')
+      }
+    }
+  }
+}
+</script>
+
+<template>
+  <aside class="info-aside">
+    <div class="info-aside__profile">
+      <img
+        class="info-aside__profile-avatar"
+        src="/images/myPhoto.png"
+        :alt="`Фото ${profile.name}`"
+      />
+      <h1 class="info-aside__profile-name">{{ profile.name }}</h1>
+      <p class="info-aside__profile-role">{{ profile.title }}</p>
+      <p class="info-aside__profile-stack">{{ profile.specialization }}</p>
+      <p class="info-aside__current-role">{{ profile.currentRole }}</p>
+      <p class="info-aside__profile-about">{{ profile.about }}</p>
+    </div>
+    <div class="info-aside__divider"></div>
+
+    <h3 class="info-aside__contacts-label">{{ asideTitle.titleContacts }}</h3>
+    <div class="info-aside__contacts">
+      <div v-for="contact in contacts" :key="contact.id" class="info-aside__contacts-item">
+        <div class="info-aside__contacts-icon-wrapper">
+          <inline-svg
+            class="info-aside__contacts-icon"
+            :src="contact.icon"
+            :aria-label="`Иконка ${contact.label}`"
+            role="img"
+            fill="currentColor"
+          />
+        </div>
+        <div class="info-aside__contacts-details">
+          <span class="info-aside__contacts-label">{{ contact.label }}</span>
+          <a
+            v-if="contact.href"
+            class="info-aside__contacts-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            :href="contact.href"
+            :aria-label="`Перейти к ${contact.label}: ${contact.value}`"
+          >
+            {{ formatLink(contact.value) }}
+          </a>
+          <span v-else class="info-aside__contacts-link">{{ contact.value }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-aside__divider"></div>
+
+    <h3 class="info-aside__socials-label">{{ asideTitle.titleSocials }}</h3>
+    <div class="info-aside__socials">
+      <div v-for="social in socials" :key="social.id" class="info-aside__socials-item">
+        <div class="info-aside__socials-icon-wrapper">
+          <inline-svg
+            class="info-aside__socials-icon"
+            :src="social.icon"
+            :aria-label="`Иконка ${social.label}`"
+            role="img"
+          />
+        </div>
+        <div class="info-aside__socials-details">
+          <span class="info-aside__socials-label">{{ social.label }}</span>
+          <a
+            class="info-aside__socials-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            :href="social.value"
+            :aria-label="`Открыть профиль в ${social.label}`"
+            >{{ formatLink(social.value) }}</a
+          >
+        </div>
+      </div>
+    </div>
+  </aside>
+</template>
+
+<style lang="scss" scoped>
+@use '@/assets/styles/variables' as vars;
+
+// --------- Общие плейсхолдеры --------- //
+%column-2-item {
+  @media (min-width: 550px) {
+    flex: 0 1 calc(50% - 0.75rem);
+  }
+
+  @media (min-width: 768px) {
+    flex: 0 0 100%;
+  }
+}
+
+%item-center {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+%icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+}
+
+%details {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.25rem;
+}
+
+%label {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.33;
+  letter-spacing: 0.01em;
+}
+
+%text {
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.29;
+}
+
+%icon-base {
+  width: 2rem;
+  height: 2rem;
+}
+
+// -------------------------------------- //
+
+.info-aside {
+  &__profile {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  &__profile-avatar {
+    align-self: center;
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+    object-fit: cover;
+
+    @media (min-width: 768px) {
+      width: 6rem;
+      height: 6rem;
+      align-self: flex-start;
+    }
+  }
+
+  &__profile-name {
+    align-self: center;
+    margin: 1rem 0;
+    font-family: var(--second-family);
+    font-weight: 500;
+    font-size: 1.7rem;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: vars.$color-title;
+
+    @media (min-width: 768px) {
+      align-self: flex-start;
+      font-size: 1.5rem;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 1.7rem;
+    }
+  }
+
+  &__profile-about {
+    margin-bottom: 0.625rem;
+    text-align: left;
+    font-family: var(--second-family);
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.33;
+    letter-spacing: 0.02em;
+    color: vars.$color-text;
+
+    @media (min-width: 768px) {
+      font-size: 1.05rem;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 1rem;
+    }
+  }
+
+  &__profile-role {
+    color: vars.$color-title;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  &__current-role {
+    color: vars.$color-text;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  &__profile-stack {
+    color: vars.$color-point;
+    margin: 0.3rem 0 1rem;
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    margin-bottom: 2rem;
+    background-color: vars.$color-icon-bg;
+  }
+
+  &__contacts {
+    margin-top: 1.25rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    @media (min-width: 550px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__contacts-item {
+    @extend %item-center;
+
+    @media (min-width: 550px) {
+      flex: 0 1 calc(50% - 0.75rem);
+    }
+
+    @media (min-width: 768px) {
+      flex: 0 0 100%;
+    }
+  }
+
+  &__contacts-icon-wrapper {
+    @extend %icon-wrapper;
+    background-color: vars.$color-icon-bg;
+    border-radius: 50%;
+  }
+
+  &__contacts-icon {
+    width: 1.3125rem;
+    height: 1.3125rem;
+    color: vars.$color-label;
+  }
+
+  &__contacts-details {
+    @extend %details;
+  }
+
+  &__contacts-label {
+    @extend %label;
+    color: vars.$color-label;
+
+    @media (min-width: 1440px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__contacts-link {
+    @extend %text;
+    color: vars.$color-text;
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-skip-ink: auto;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 1rem;
+    }
+  }
+
+  &__socials {
+    margin-top: 1.25rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    @media (min-width: 550px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__socials-item {
+    @extend %item-center;
+
+    @media (min-width: 550px) {
+      flex: 0 1 calc(50% - 0.75rem);
+    }
+
+    @media (min-width: 768px) {
+      flex: 0 0 100%;
+    }
+  }
+
+  &__socials-icon-wrapper {
+    @extend %icon-wrapper;
+  }
+
+  &__socials-icon {
+    @extend %icon-base;
+  }
+
+  &__socials-details {
+    @extend %details;
+  }
+
+  &__socials-label {
+    @extend %label;
+    text-align: start;
+    color: vars.$color-label;
+
+    @media (min-width: 1440px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__socials-link {
+    @extend %text;
+    color: vars.$color-text;
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-skip-ink: auto;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 1rem;
+    }
+  }
+}
+</style>
