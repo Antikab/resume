@@ -100,22 +100,20 @@ export default {
 
 %text-second {
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.29;
-  letter-spacing: 0.01em;
+  font-size: var(--font-size-compact);
+  line-height: var(--line-height-body);
 }
 
 %text-m-second {
-  font-family: var(--second-family);
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-weight: 500;
+  font-size: var(--font-size-meta);
+  line-height: 1.5;
 }
 
 %text-m {
-  font-weight: 500;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-weight: 600;
+  font-size: var(--font-size-body);
+  line-height: 1.4;
 }
 
 // -------------------------------------- //
@@ -180,20 +178,13 @@ export default {
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-width: 0;
     padding-bottom: 3rem;
   }
 
   &__title {
-    font-family: var(--second-family);
-    font-weight: 500;
-    font-size: 1.45rem;
-    line-height: 1.33;
-    letter-spacing: 0.01em;
+    font-size: var(--font-size-section);
     color: vars.$color-title;
-
-    @media (max-width: 768px) {
-      font-size: 1.25rem;
-    }
   }
 
   &__card-wrapper {
@@ -233,6 +224,10 @@ export default {
     display: flex;
     gap: 1rem;
 
+    @media (max-width: 600px), (min-width: 768px) and (max-width: 1129px) {
+      flex-direction: column;
+    }
+
     @media (max-width: 468px) {
       flex: 1 1 100%;
     }
@@ -271,25 +266,18 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 0.125rem;
+    min-width: 0;
   }
 
   &__text {
     @extend %text-m;
     color: vars.$color-title;
-
-    @media (max-width: 1129px) {
-      font-size: 0.875rem;
-    }
   }
 
   &__label {
     @extend %text-second;
-    color: vars.$color-label;
+    color: vars.$color-text;
     white-space: pre-line;
-
-    @media (max-width: 1129px) {
-      font-size: 0.75rem;
-    }
   }
 
   &__links-wrapper {
@@ -308,14 +296,6 @@ export default {
     &:hover {
       text-decoration: underline;
       text-decoration-skip-ink: auto;
-    }
-
-    @media (max-width: 1129px) {
-      font-size: 0.75rem;
-    }
-
-    @media (min-width: 1440px) {
-      font-size: 1rem;
     }
   }
 

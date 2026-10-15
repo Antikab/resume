@@ -81,14 +81,14 @@ export default {
 
 %text {
   font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1.29;
+  font-size: var(--font-size-compact);
+  line-height: 1.5;
 }
 
 %text-sm {
   font-weight: 400;
-  font-size: 0.625rem;
-  letter-spacing: 0.01em;
+  font-size: var(--font-size-meta);
+  line-height: 1.6;
 }
 
 // -------------------------------------- //
@@ -158,16 +158,8 @@ export default {
   }
 
   &__title {
-    font-family: var(--second-family);
-    font-weight: 500;
-    font-size: 1.45rem;
-    line-height: 1.33;
-    letter-spacing: 0.01em;
+    font-size: var(--font-size-section);
     color: vars.$color-title;
-
-    @media (max-width: 768px) {
-      font-size: 1.25rem;
-    }
   }
 
   &__card-wrapper {
@@ -210,11 +202,13 @@ export default {
 
   &__logo-wrapper {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
     gap: 1rem;
 
     @media (min-width: 1200px) {
-      min-height: 7.5rem;
+      flex-direction: column;
+      min-height: 10rem;
     }
   }
 
@@ -247,13 +241,14 @@ export default {
   }
 
   &__institution {
-    font-weight: 500;
-    font-size: 0.75rem;
-    line-height: 1.33;
+    flex: 1 1 10rem;
+    font-weight: 600;
+    font-size: var(--font-size-compact);
+    line-height: 1.45;
     color: vars.$color-title;
 
-    @media (min-width: 1440px) {
-      font-size: 0.9rem;
+    @media (min-width: 1200px) {
+      flex: 0 1 auto;
     }
   }
 
@@ -297,29 +292,17 @@ export default {
     @media (min-width: 1200px) {
       min-height: 4rem;
     }
-
-    @media (min-width: 1440px) {
-      font-size: 1rem;
-    }
   }
 
   &__years {
     color: vars.$color-label;
     @extend %text-sm;
-
-    @media (min-width: 1440px) {
-      font-size: 0.75rem;
-    }
   }
 
   &__details-text {
     @extend %text-sm;
     color: vars.$color-label;
     max-width: 36ch;
-
-    @media (min-width: 1440px) {
-      font-size: 0.75rem;
-    }
   }
 }
 </style>

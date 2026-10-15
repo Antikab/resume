@@ -139,16 +139,15 @@ export default {
 }
 
 %label {
-  font-weight: 400;
-  font-size: 0.75rem;
-  line-height: 1.33;
-  letter-spacing: 0.01em;
+  font-weight: 500;
+  font-size: var(--font-size-meta);
+  line-height: 1.5;
 }
 
 %text {
   font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1.29;
+  font-size: var(--font-size-compact);
+  line-height: 1.5;
 }
 
 %icon-base {
@@ -180,57 +179,41 @@ export default {
   &__profile-name {
     align-self: center;
     margin: 1rem 0;
-    font-family: var(--second-family);
-    font-weight: 500;
-    font-size: 1.7rem;
-    line-height: 1.25;
+    font-size: 1.625rem;
+    line-height: var(--line-height-heading);
     letter-spacing: -0.02em;
     color: vars.$color-title;
 
     @media (min-width: 768px) {
       align-self: flex-start;
-      font-size: 1.5rem;
-    }
-
-    @media (min-width: 1200px) {
-      font-size: 1.7rem;
     }
   }
 
   &__profile-about {
     margin-bottom: 0.625rem;
     text-align: left;
-    font-family: var(--second-family);
-    font-weight: 500;
-    font-size: 1rem;
-    line-height: 1.33;
-    letter-spacing: 0.02em;
+    font-size: var(--font-size-compact);
+    line-height: var(--line-height-body);
     color: vars.$color-text;
-
-    @media (min-width: 768px) {
-      font-size: 1.05rem;
-    }
-
-    @media (min-width: 1200px) {
-      font-size: 1rem;
-    }
   }
 
   &__profile-role {
     color: vars.$color-title;
-    font-size: 1.1rem;
+    font-size: var(--font-size-body);
     font-weight: 500;
   }
 
   &__current-role {
     color: vars.$color-text;
-    font-size: 0.85rem;
+    font-size: var(--font-size-meta);
     margin-bottom: 1rem;
   }
 
   &__profile-stack {
     color: vars.$color-point;
     margin: 0.3rem 0 1rem;
+    font-size: var(--font-size-compact);
+    font-weight: 500;
   }
 
   &__divider {
@@ -284,10 +267,6 @@ export default {
   &__contacts-label {
     @extend %label;
     color: vars.$color-label;
-
-    @media (min-width: 1440px) {
-      font-size: 0.9rem;
-    }
   }
 
   &__contacts-link {
@@ -297,10 +276,6 @@ export default {
     &:hover {
       text-decoration: underline;
       text-decoration-skip-ink: auto;
-    }
-
-    @media (min-width: 1440px) {
-      font-size: 1rem;
     }
   }
 
@@ -345,10 +320,6 @@ export default {
     @extend %label;
     text-align: start;
     color: vars.$color-label;
-
-    @media (min-width: 1440px) {
-      font-size: 0.9rem;
-    }
   }
 
   &__socials-link {
@@ -358,10 +329,6 @@ export default {
     &:hover {
       text-decoration: underline;
       text-decoration-skip-ink: auto;
-    }
-
-    @media (min-width: 1440px) {
-      font-size: 1rem;
     }
   }
 }

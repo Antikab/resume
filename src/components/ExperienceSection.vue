@@ -197,28 +197,26 @@ export default {
 
 %text {
   font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1.29;
+  font-size: var(--font-size-body);
+  line-height: 1.5;
 }
 
 %text-l {
-  font-family: var(--second-family);
-  font-weight: 500;
-  font-size: 1.45rem;
-  line-height: 1.33;
-  letter-spacing: 0.01em;
+  font-weight: 600;
+  font-size: var(--font-size-section);
+  line-height: var(--line-height-heading);
 }
 
 %text-m {
   font-weight: 400;
-  font-size: 0.75rem;
-  letter-spacing: 0.01em;
+  font-size: var(--font-size-compact);
+  line-height: var(--line-height-body);
 }
 
 %text-sm {
   font-weight: 400;
-  font-size: 0.625rem;
-  letter-spacing: 0.01em;
+  font-size: var(--font-size-meta);
+  line-height: 1.5;
 }
 
 // -------------------------------------- //
@@ -288,10 +286,6 @@ export default {
   &__title {
     @extend %text-l;
     color: vars.$color-title;
-
-    @media (max-width: 768px) {
-      font-size: 1.25rem;
-    }
   }
 
   &__card-wrapper {
@@ -332,12 +326,9 @@ export default {
     @extend %text-sm;
     color: vars.$color-text;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 0.25rem;
-
-    @media (min-width: 1440px) {
-      font-size: 0.75rem;
-    }
   }
 
   &__date-text {
@@ -347,10 +338,6 @@ export default {
       padding: 0px 4px;
       color: vars.$color-text-highlight;
       background-color: vars.$color-label-highlight;
-
-      @media (min-width: 1440px) {
-        font-size: 0.75rem;
-      }
     }
   }
 
@@ -378,10 +365,6 @@ export default {
   &__place-text {
     @extend %text-sm;
     color: vars.$color-label;
-
-    @media (min-width: 1440px) {
-      font-size: 0.75rem;
-    }
   }
 
   &__company-wrapper {
@@ -418,21 +401,12 @@ export default {
 
   &__job-title {
     @extend %text-m;
-    line-height: 1.33;
     color: vars.$color-label;
-
-    @media (min-width: 1440px) {
-      font-size: 0.9rem;
-    }
   }
 
   &__company-text {
     @extend %text;
     color: vars.$color-title;
-
-    @media (min-width: 1440px) {
-      font-size: 1rem;
-    }
   }
 
   &__description-wrapper {
@@ -446,8 +420,9 @@ export default {
 
   &__summary {
     color: vars.$color-text;
-    font-size: 0.9rem;
-    line-height: 1.6;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    max-width: 75ch;
   }
 
   &__description {
@@ -463,6 +438,7 @@ export default {
 
   &__description-header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 0.75rem;
     align-items: flex-start;
@@ -470,14 +446,14 @@ export default {
 
   &__toggle {
     @extend %text-sm;
-    width: 4.1rem;
+    min-width: 5.25rem;
     white-space: nowrap;
     border: 1px solid vars.$color-icon-bg;
     border-radius: 999px;
-    padding: 0.2rem 0.6rem;
+    padding: 0.35rem 0.75rem;
     color: vars.$color-title;
     cursor: pointer;
-    min-height: 2rem;
+    min-height: 2.25rem;
     flex-shrink: 0;
     transition: background-color 0.2s ease;
 
@@ -488,22 +464,17 @@ export default {
 
   &__description-title {
     @extend %text-m;
+    flex: 1 1 14rem;
     margin-bottom: 0.1rem;
-    font-weight: 700;
+    font-weight: 600;
     color: vars.$color-title;
-    font-size: 0.95rem;
+    font-size: var(--font-size-body);
     line-height: 1.4;
-
-    @media (min-width: 1440px) {
-      font-size: 0.9rem;
-    }
   }
 
   &__lead {
     @extend %text-m;
     color: vars.$color-text;
-    font-size: 0.875rem;
-    line-height: 1.55;
     white-space: pre-line;
   }
 
@@ -521,7 +492,7 @@ export default {
 
   &__block-title {
     @extend %text-m;
-    font-weight: 700;
+    font-weight: 600;
     color: vars.$color-title;
     margin-top: 0.1rem;
   }
@@ -536,12 +507,11 @@ export default {
 
   &__list-item {
     @extend %text-m;
-    color: vars.$color-label;
-    line-height: 1.55;
+    color: vars.$color-text;
 
     :deep(strong) {
       color: vars.$color-title;
-      font-weight: 700;
+      font-weight: 600;
     }
   }
 
@@ -554,11 +524,12 @@ export default {
 
   &__tag {
     @extend %text-sm;
+    font-size: var(--font-size-caption);
     padding: 0.15rem 0.45rem;
     border-radius: 999px;
     background: vars.$color-label-highlight;
     color: vars.$color-text-highlight;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 }
 </style>

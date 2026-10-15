@@ -97,10 +97,7 @@ export default {
   }
 
   &__title {
-    font-family: var(--second-family);
-    font-weight: 500;
-    font-size: 1.45rem;
-    line-height: 1.33;
+    font-size: var(--font-size-section);
     color: vars.$color-title;
   }
 
@@ -112,15 +109,15 @@ export default {
   }
 
   &__group-title {
-    font-family: var(--second-family);
-    font-size: 0.9rem;
+    font-size: var(--font-size-body);
+    line-height: 1.4;
     color: vars.$color-title;
     margin-bottom: 0.35rem;
   }
 
   &__items {
-    font-size: 0.875rem;
-    line-height: 1.65;
+    font-size: var(--font-size-compact);
+    line-height: var(--line-height-body);
     color: vars.$color-text;
   }
 }

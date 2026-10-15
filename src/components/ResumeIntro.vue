@@ -33,14 +33,14 @@ defineProps({ profile: { type: Object, required: true } })
   h2 {
     margin-bottom: 1rem;
     color: vars.$color-title;
-    font-size: 1.45rem;
-    font-weight: 500;
+    font-size: var(--font-size-section);
   }
 
   p,
   li {
-    font-size: 0.95rem;
-    line-height: 1.65;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    max-width: 75ch;
   }
 
   ul {
@@ -64,7 +64,9 @@ defineProps({ profile: { type: Object, required: true } })
       align-items: center;
       min-height: 2.75rem;
       color: vars.$color-point;
-      font-size: 0.85rem;
+      font-size: var(--font-size-meta);
+      font-weight: 500;
+      line-height: 1.4;
       padding: 0.65rem 0;
       text-decoration: underline;
       text-underline-offset: 3px;
