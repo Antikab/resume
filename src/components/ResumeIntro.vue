@@ -19,10 +19,6 @@ defineProps({ profile: { type: Object, required: true } })
       >
         {{ documentLabels.openPdf }}
       </a>
-      <a :href="resumeFiles.html" target="_blank" rel="noopener noreferrer">
-        {{ documentLabels.printVersion }}
-      </a>
-      <a :href="resumeFiles.text" download>{{ documentLabels.downloadText }}</a>
     </nav>
   </section>
 </template>

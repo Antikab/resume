@@ -17,6 +17,5 @@ export const documentLabels = Object.freeze({
   education: 'Образование',
   stack: 'Стек',
   openPdf: 'Открыть резюме · PDF',
-  printVersion: 'Версия для печати',
   downloadText: 'Текст для отклика'
 })
