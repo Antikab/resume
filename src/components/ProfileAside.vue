@@ -34,7 +34,7 @@ export default {
     <div class="info-aside__profile">
       <img
         class="info-aside__profile-avatar"
-        src="/images/myPhoto.png"
+        src="/images/myPhoto.webp"
         :alt="`Фото ${profile.name}`"
       />
       <h1 class="info-aside__profile-name">{{ profile.name }}</h1>
