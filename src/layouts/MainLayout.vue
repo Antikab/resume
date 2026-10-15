@@ -47,6 +47,7 @@ export default {
 .portfolio {
   display: flex;
   flex-direction: column;
+  background-color: #ffffff;
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -65,6 +66,12 @@ export default {
     @media (min-width: 768px) {
       flex: 0 0 353px;
       min-width: 10%;
+      align-self: flex-start;
+      position: sticky;
+      top: 0;
+      max-height: 100dvh;
+      overflow-y: auto;
+      scrollbar-width: thin;
     }
 
     @media (min-width: 1200px) {
